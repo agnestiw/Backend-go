@@ -1,0 +1,634 @@
+2025/09/13 15:31:10 File logger berhasil diinisialisasi.
+2025/09/13 15:31:10 Failed to connect to database:sql: unknown driver "postgres" (forgotten import?)
+2025/09/13 15:32:01 File logger berhasil diinisialisasi.
+2025/09/13 15:32:01 Failed to connect to database:sql: unknown driver "postgres" (forgotten import?)
+2025/09/13 15:32:23 File logger berhasil diinisialisasi.
+2025/09/13 15:32:23 Failed to connect to database:sql: unknown driver "postgres" (forgotten import?)
+2025/09/13 15:39:07 File logger berhasil diinisialisasi.
+2025/09/13 15:39:07 Failed to connect to database:sql: unknown driver "postgres" (forgotten import?)
+2025/09/13 15:42:25 File logger berhasil diinisialisasi.
+2025/09/13 15:42:25 Failed to connect to database:sql: unknown driver "postgres" (forgotten import?)
+2025/09/13 15:44:04 File logger berhasil diinisialisasi.
+2025/09/13 15:44:04 Failed to connect to database:sql: unknown driver "postgres" (forgotten import?)
+2025/09/13 15:44:51 File logger berhasil diinisialisasi.
+2025/09/13 15:44:51 Failed to connect to database:sql: unknown driver "postgres" (forgotten import?)
+2025/09/13 15:46:57 File logger berhasil diinisialisasi.
+2025/09/13 19:52:59 File logger berhasil diinisialisasi.
+2025/09/13 21:21:13 File logger berhasil diinisialisasi.
+2025/09/14 01:17:52 File logger berhasil diinisialisasi.
+2025/09/14 01:30:41 File logger berhasil diinisialisasi.
+2025/09/14 01:30:41 Database connection established
+2025/09/14 01:57:30 File logger berhasil diinisialisasi.
+2025/09/14 01:57:30 Database connection established
+2025/09/14 09:24:33 File logger berhasil diinisialisasi.
+2025/09/14 09:24:33 Database connection established
+2025/09/14 10:48:56 File logger berhasil diinisialisasi.
+2025/09/14 10:48:56 Database connection established
+2025/09/14 11:27:36 File logger berhasil diinisialisasi.
+2025/09/14 11:27:36 Database connection established
+2025/09/14 11:35:45 File logger berhasil diinisialisasi.
+2025/09/14 11:35:45 Database connection established
+2025/09/14 11:38:54 File logger berhasil diinisialisasi.
+2025/09/14 11:38:54 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 
+2025/09/14 11:38:55 Database connection established
+2025/09/14 11:46:23 File logger berhasil diinisialisasi.
+2025/09/14 11:46:23 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 
+2025/09/14 11:46:23 Database connection established
+2025/09/14 11:47:10 File logger berhasil diinisialisasi.
+2025/09/14 11:47:10 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/14 11:47:10 Database connection established
+2025/09/14 11:48:37 File logger berhasil diinisialisasi.
+2025/09/14 11:48:37 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 
+2025/09/14 11:48:37 Database connection established
+2025/09/14 12:40:38 File logger berhasil diinisialisasi.
+2025/09/14 12:40:38 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 
+2025/09/14 12:40:38 Database connection established
+2025/09/14 14:44:43 File logger berhasil diinisialisasi.
+2025/09/14 14:44:43 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/14 14:44:43 Database connection established
+2025/09/14 16:03:00 File logger berhasil diinisialisasi.
+2025/09/14 16:03:00 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/14 16:03:00 Database connection established
+2025/09/18 15:03:09 File logger berhasil diinisialisasi.
+2025/09/18 15:03:09 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:03:09 Database connection established
+2025/09/18 15:04:09 File logger berhasil diinisialisasi.
+2025/09/18 15:04:09 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 
+2025/09/18 15:04:09 Database connection established
+2025/09/18 15:20:22 File logger berhasil diinisialisasi.
+2025/09/18 15:20:22 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:20:22 Database connection established
+2025/09/18 15:25:30 File logger berhasil diinisialisasi.
+2025/09/18 15:25:30 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:25:30 Database connection established
+2025/09/18 15:26:20 File logger berhasil diinisialisasi.
+2025/09/18 15:26:20 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:26:20 Database connection established
+2025/09/18 15:27:48 File logger berhasil diinisialisasi.
+2025/09/18 15:27:48 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:27:48 Database connection established
+2025/09/18 15:28:07 File logger berhasil diinisialisasi.
+2025/09/18 15:28:07 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:28:07 Database connection established
+2025/09/18 15:32:39 File logger berhasil diinisialisasi.
+2025/09/18 15:32:39 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:32:39 Database connection established
+2025/09/18 15:33:19 File logger berhasil diinisialisasi.
+2025/09/18 15:33:19 DEBUG: JWT_SECRET_KEY yang terbaca adalah -> 16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h
+2025/09/18 15:33:19 Database connection established
+2025/09/18 15:35:48 File logger berhasil diinisialisasi.
+2025/09/18 15:35:48 Database connection established
+2025/09/18 15:38:25 File logger berhasil diinisialisasi.
+2025/09/18 15:38:25 Database connection established
+2025/09/18 23:31:59 File logger berhasil diinisialisasi.
+2025/09/18 23:31:59 Database connection established
+2025/09/18 23:42:13 File logger berhasil diinisialisasi.
+2025/09/18 23:42:13 Database connection established
+2025/09/18 23:44:56 File logger berhasil diinisialisasi.
+2025/09/18 23:44:56 Database connection established
+2025/09/19 09:29:05 File logger berhasil diinisialisasi.
+2025/09/19 09:29:05 Database connection established
+2025/09/19 11:35:22 File logger berhasil diinisialisasi.
+2025/09/19 11:35:22 Database connection established
+2025/09/19 11:38:03 File logger berhasil diinisialisasi.
+2025/09/19 11:38:03 Database connection established
+2025/09/19 11:42:05 File logger berhasil diinisialisasi.
+2025/09/19 11:42:05 Database connection established
+2025/09/20 12:53:30 File logger berhasil diinisialisasi.
+2025/09/20 12:53:30 Database connection established
+2025/09/20 12:58:11 File logger berhasil diinisialisasi.
+2025/09/20 12:58:11 Database connection established
+2025/09/20 14:18:51 File logger berhasil diinisialisasi.
+2025/09/20 14:18:51 Database connection established
+2025/09/25 15:44:27 File logger berhasil diinisialisasi.
+2025/09/25 15:44:27 Database connection established
+2025/09/26 01:34:41 File logger berhasil diinisialisasi.
+2025/09/26 01:34:41 Database connection established
+2025/09/26 05:50:07 File logger berhasil diinisialisasi.
+2025/09/26 05:50:07 Database connection established
+2025/09/26 05:58:41 File logger berhasil diinisialisasi.
+2025/09/26 05:58:41 Database connection established
+2025/09/26 06:09:56 File logger berhasil diinisialisasi.
+2025/09/26 06:09:56 Database connection established
+2025/09/26 06:28:35 File logger berhasil diinisialisasi.
+2025/09/26 06:28:35 Database connection established
+2025/09/26 07:38:26 File logger berhasil diinisialisasi.
+2025/09/26 07:38:26 Database connection established
+2025/09/26 08:00:57 File logger berhasil diinisialisasi.
+2025/09/26 08:00:57 Database connection established
+2025/09/26 08:12:09 File logger berhasil diinisialisasi.
+2025/09/26 08:12:09 Database connection established
+2025/09/26 09:29:50 File logger berhasil diinisialisasi.
+2025/09/26 09:29:50 Database connection established
+2025/09/26 09:31:35 File logger berhasil diinisialisasi.
+2025/09/26 09:31:35 Database connection established
+2025/09/26 09:43:15 File logger berhasil diinisialisasi.
+2025/09/26 09:43:15 Database connection established
+2025/09/26 09:57:52 File logger berhasil diinisialisasi.
+2025/09/26 09:57:52 Database connection established
+2025/09/26 10:01:23 File logger berhasil diinisialisasi.
+2025/09/26 10:01:23 Database connection established
+2025/09/26 10:09:27 File logger berhasil diinisialisasi.
+2025/09/26 10:09:27 Database connection established
+2025/09/26 10:29:43 File logger berhasil diinisialisasi.
+2025/09/26 10:29:43 Database connection established
+2025/09/26 10:36:49 File logger berhasil diinisialisasi.
+2025/09/26 10:36:49 Database connection established
+2025/09/26 10:37:17 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:37:17 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:39:46 File logger berhasil diinisialisasi.
+2025/09/26 10:39:46 Database connection established
+2025/09/26 10:40:08 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:40:08 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:40:11 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:40:11 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:40:35 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:40:35 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:45:47 File logger berhasil diinisialisasi.
+2025/09/26 10:45:47 Database connection established
+2025/09/26 10:46:18 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:46:18 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:46:19 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:46:19 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:46:20 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:46:20 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:46:21 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:46:21 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:50:36 File logger berhasil diinisialisasi.
+2025/09/26 10:50:36 Database connection established
+2025/09/26 10:50:55 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:50:55 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:52:50 File logger berhasil diinisialisasi.
+2025/09/26 10:52:50 Database connection established
+2025/09/26 10:52:56 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:52:56 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:52:57 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:52:57 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:54:49 File logger berhasil diinisialisasi.
+2025/09/26 10:54:49 Database connection established
+2025/09/26 10:54:58 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:54:58 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:55:53 File logger berhasil diinisialisasi.
+2025/09/26 10:55:53 Database connection established
+2025/09/26 10:56:00 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, deleted_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:56:00 [ERROR] Query error: pq: column "deleted_by" does not exist
+2025/09/26 10:56:00 [ERROR] GetPekerjaanRepo failed: pq: column "deleted_by" does not exist
+2025/09/26 10:56:54 File logger berhasil diinisialisasi.
+2025/09/26 10:56:54 Database connection established
+2025/09/26 10:57:10 File logger berhasil diinisialisasi.
+2025/09/26 10:57:10 Database connection established
+2025/09/26 10:57:19 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:57:19 [DEBUG] GetPekerjaanRepo result count: 100
+2025/09/26 10:58:48 File logger berhasil diinisialisasi.
+2025/09/26 10:58:48 Database connection established
+2025/09/26 10:59:16 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 10:59:16 [DEBUG] GetPekerjaanRepo result count: 100
+2025/09/26 10:59:37 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE AND user_id = $1
+		ORDER BY created_at DESC
+	 | args: [2]
+2025/09/26 10:59:37 [DEBUG] GetPekerjaanRepo result count: 1
+2025/09/26 11:00:18 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/09/26 11:00:18 [DEBUG] GetPekerjaanRepo result count: 100
+2025/09/26 11:09:35 File logger berhasil diinisialisasi.
+2025/09/26 11:09:35 Database connection established
+2025/09/26 11:11:42 File logger berhasil diinisialisasi.
+2025/09/26 11:11:42 Database connection established
+2025/09/26 11:13:44 File logger berhasil diinisialisasi.
+2025/09/26 11:13:44 Database connection established
+2025/09/26 11:16:19 File logger berhasil diinisialisasi.
+2025/09/26 11:16:19 Database connection established
+2025/09/26 11:18:57 File logger berhasil diinisialisasi.
+2025/09/26 11:18:57 Database connection established
+2025/09/26 11:22:11 File logger berhasil diinisialisasi.
+2025/09/26 11:22:11 Database connection established
+2025/09/26 11:24:30 File logger berhasil diinisialisasi.
+2025/09/26 11:24:30 Database connection established
+2025/09/26 11:24:36 [DEBUG] Locals: role=admin, user_id=1
+2025/09/26 11:25:42 File logger berhasil diinisialisasi.
+2025/09/26 11:25:42 Database connection established
+2025/09/26 11:25:47 [DEBUG] Locals: role=admin, user_id=1
+2025/09/26 11:26:10 [DEBUG] Locals: role=user, user_id=3
+2025/09/26 11:42:10 File logger berhasil diinisialisasi.
+2025/09/26 11:42:10 Database connection established
+2025/09/26 11:42:18 [DEBUG] Locals: role=admin, user_id=1
+2025/09/26 11:42:30 [DEBUG] Locals: role=user, user_id=3
+2025/09/26 11:47:06 [DEBUG] Locals: role=user, user_id=3
+2025/10/07 15:29:01 File logger berhasil diinisialisasi.
+2025/10/07 15:29:01 Database connection established
+2025/10/07 15:40:11 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 15:40:11 [DEBUG] GetPekerjaanRepo result count: 98
+2025/10/07 18:03:52 File logger berhasil diinisialisasi.
+2025/10/07 18:03:52 Database connection established
+2025/10/07 18:05:28 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 18:05:28 [DEBUG] GetPekerjaanRepo result count: 98
+2025/10/07 18:07:44 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 18:07:44 [DEBUG] GetPekerjaanRepo result count: 98
+2025/10/07 18:07:57 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 18:07:57 [DEBUG] GetPekerjaanRepo result count: 98
+2025/10/07 18:34:49 File logger berhasil diinisialisasi.
+2025/10/07 18:34:49 Database connection established
+2025/10/07 18:35:11 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 18:35:11 [DEBUG] GetPekerjaanRepo result count: 98
+2025/10/07 19:57:58 File logger berhasil diinisialisasi.
+2025/10/07 19:57:58 Database connection established
+2025/10/07 19:58:36 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, user_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 19:58:36 [ERROR] Query error: pq: column "user_id" does not exist
+2025/10/07 19:58:36 [ERROR] GetPekerjaanRepo failed: pq: column "user_id" does not exist
+2025/10/07 20:08:20 File logger berhasil diinisialisasi.
+2025/10/07 20:08:20 Database connection established
+2025/10/07 20:09:12 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE AND user_id = $1
+		ORDER BY created_at DESC
+	 | args: [3]
+2025/10/07 20:09:12 [ERROR] Query error: pq: column "is_delete" does not exist
+2025/10/07 20:09:12 [ERROR] GetPekerjaanRepo failed: pq: column "is_delete" does not exist
+2025/10/07 20:12:28 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE AND user_id = $1
+		ORDER BY created_at DESC
+	 | args: [3]
+2025/10/07 20:12:28 [ERROR] Query error: pq: column "is_delete" does not exist
+2025/10/07 20:12:28 [ERROR] GetPekerjaanRepo failed: pq: column "is_delete" does not exist
+2025/10/07 20:13:41 File logger berhasil diinisialisasi.
+2025/10/07 20:13:41 Database connection established
+2025/10/07 20:13:48 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE AND user_id = $1
+		ORDER BY created_at DESC
+	 | args: [3]
+2025/10/07 20:13:48 [ERROR] Query error: pq: column "delete_by" does not exist
+2025/10/07 20:13:48 [ERROR] GetPekerjaanRepo failed: pq: column "delete_by" does not exist
+2025/10/07 20:14:44 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE AND user_id = $1
+		ORDER BY created_at DESC
+	 | args: [3]
+2025/10/07 20:14:44 [ERROR] Query error: pq: operator does not exist: timestamp without time zone = boolean
+2025/10/07 20:14:44 [ERROR] GetPekerjaanRepo failed: pq: operator does not exist: timestamp without time zone = boolean
+2025/10/07 20:18:36 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 20:18:36 [DEBUG] GetPekerjaanRepo result count: 0
+2025/10/07 20:23:06 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 20:23:06 [DEBUG] GetPekerjaanRepo result count: 0
+2025/10/07 20:23:18 File logger berhasil diinisialisasi.
+2025/10/07 20:23:18 Database connection established
+2025/10/07 20:23:24 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 20:23:24 [DEBUG] GetPekerjaanRepo result count: 0
+2025/10/07 20:23:38 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 20:23:38 [DEBUG] GetPekerjaanRepo result count: 0
+2025/10/07 20:26:39 File logger berhasil diinisialisasi.
+2025/10/07 20:26:39 Database connection established
+2025/10/07 20:26:46 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = 0
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 20:26:46 [ERROR] Query error: pq: operator does not exist: boolean = integer
+2025/10/07 20:26:46 [ERROR] GetPekerjaanRepo failed: pq: operator does not exist: boolean = integer
+2025/10/07 20:26:58 File logger berhasil diinisialisasi.
+2025/10/07 20:26:58 Database connection established
+2025/10/07 20:27:05 [DEBUG] GetPekerjaanRepo query: 
+		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
+		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
+		       status_pekerjaan, deskripsi_pekerjaan, is_delete, delete_by, deleted_at, created_at
+		FROM pekerjaan_alumni
+		WHERE is_delete = FALSE
+		ORDER BY created_at DESC
+	 | args: []
+2025/10/07 20:27:05 [DEBUG] GetPekerjaanRepo result count: 0
+2025/10/07 20:33:14 File logger berhasil diinisialisasi.
+2025/10/07 20:33:14 Database connection established
+2025/10/07 20:34:03 File logger berhasil diinisialisasi.
+2025/10/07 20:34:03 Database connection established
+2025/10/07 20:36:45 File logger berhasil diinisialisasi.
+2025/10/07 20:36:45 Database connection established
+2025/10/07 20:38:29 File logger berhasil diinisialisasi.
+2025/10/07 20:38:29 Database connection established
+2025/10/07 20:39:04 File logger berhasil diinisialisasi.
+2025/10/07 20:39:04 Database connection established
+2025/10/07 20:41:36 File logger berhasil diinisialisasi.
+2025/10/07 20:41:36 Database connection established
+2025/10/07 20:44:10 File logger berhasil diinisialisasi.
+2025/10/07 20:44:10 Database connection established
+2025/10/07 20:47:49 File logger berhasil diinisialisasi.
+2025/10/07 20:47:49 Database connection established
+2025/10/07 20:48:56 File logger berhasil diinisialisasi.
+2025/10/07 20:48:56 Database connection established
+2025/10/07 22:29:15 File logger berhasil diinisialisasi.
+2025/10/07 22:29:15 Database connection established
+2025/10/07 22:55:05 File logger berhasil diinisialisasi.
+2025/10/07 22:55:05 Database connection established
+2025/10/07 22:55:21 [DEBUG] Locals: role=admin, user_id=1
+2025/10/07 23:03:45 File logger berhasil diinisialisasi.
+2025/10/07 23:03:45 Database connection established
+2025/10/08 04:22:30 File logger berhasil diinisialisasi.
+2025/10/08 04:22:30 Database connection established
+2025/10/08 04:23:59 File logger berhasil diinisialisasi.
+2025/10/08 04:23:59 Database connection established
+2025/10/08 04:35:01 File logger berhasil diinisialisasi.
+2025/10/08 04:35:01 Database connection established
+2025/10/08 04:38:42 File logger berhasil diinisialisasi.
+2025/10/08 04:38:42 Database connection established
+2025/10/08 04:45:04 File logger berhasil diinisialisasi.
+2025/10/08 04:45:04 Database connection established
+2025/10/08 04:53:16 File logger berhasil diinisialisasi.
+2025/10/08 04:53:16 Database connection established
+2025/10/08 04:56:45 File logger berhasil diinisialisasi.
+2025/10/08 04:56:45 Database connection established
+2025/10/08 05:03:19 File logger berhasil diinisialisasi.
+2025/10/08 05:03:19 Database connection established
+2025/10/08 05:03:42 --- DEBUGGING AUTH MIDDLEWARE ---
+2025/10/08 05:03:42 Authorization Header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzU5OTYxMDA1LCJpYXQiOjE3NTk4NzQ2MDV9.PGt6EOthFgocw7Be1j0baOrplr1mcsofiabmBCt86XE
+2025/10/08 05:13:53 File logger berhasil diinisialisasi.
+2025/10/08 05:13:53 Database connection established
+2025/10/08 05:15:54 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 05:21:18 File logger berhasil diinisialisasi.
+2025/10/08 05:21:18 Database connection established
+2025/10/08 05:21:23 --- DEBUG: Terjadi error di repository --- gagal melakukan soft delete: pq: column "deleted_by" of relation "pekerjaan_alumni" does not exist
+2025/10/08 05:23:40 File logger berhasil diinisialisasi.
+2025/10/08 05:23:40 Database connection established
+2025/10/08 05:24:00 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 05:31:25 File logger berhasil diinisialisasi.
+2025/10/08 05:31:25 Database connection established
+2025/10/08 05:32:06 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 05:32:34 [DEBUG] Locals: role=user, user_id=52
+2025/10/08 07:15:33 File logger berhasil diinisialisasi.
+2025/10/08 07:15:33 Database connection established
+2025/10/08 07:16:26 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 07:19:33 --- DEBUGGING AUTH MIDDLEWARE ---
+2025/10/08 07:19:33 Authorization Header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzU5OTYxMDA1LCJpYXQiOjE3NTk4NzQ2MDV9.PGt6EOthFgocw7Be1j0baOrplr1mcsofiabmBCt86XE
+2025/10/08 07:21:24 File logger berhasil diinisialisasi.
+2025/10/08 07:21:24 Database connection established
+2025/10/08 07:22:31 File logger berhasil diinisialisasi.
+2025/10/08 07:22:31 Database connection established
+2025/10/08 07:28:42 File logger berhasil diinisialisasi.
+2025/10/08 07:28:42 Database connection established
+2025/10/08 07:35:16 File logger berhasil diinisialisasi.
+2025/10/08 07:35:16 Database connection established
+2025/10/08 07:40:02 File logger berhasil diinisialisasi.
+2025/10/08 07:40:02 Database connection established
+2025/10/08 07:44:19 File logger berhasil diinisialisasi.
+2025/10/08 07:44:19 Database connection established
+2025/10/08 07:45:45 File logger berhasil diinisialisasi.
+2025/10/08 07:45:45 Database connection established
+2025/10/08 07:46:09 File logger berhasil diinisialisasi.
+2025/10/08 07:46:09 Database connection established
+2025/10/08 07:53:35 File logger berhasil diinisialisasi.
+2025/10/08 07:53:35 Database connection established
+2025/10/08 09:32:06 File logger berhasil diinisialisasi.
+2025/10/08 09:32:06 Database connection established
+2025/10/08 09:32:53 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 10:30:31 File logger berhasil diinisialisasi.
+2025/10/08 10:30:31 Database connection established
+2025/10/08 10:33:30 File logger berhasil diinisialisasi.
+2025/10/08 10:33:30 Database connection established
+2025/10/08 10:34:42 File logger berhasil diinisialisasi.
+2025/10/08 10:34:42 Database connection established
+2025/10/08 10:34:58 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 10:53:57 File logger berhasil diinisialisasi.
+2025/10/08 10:53:57 Database connection established
+2025/10/08 11:07:01 File logger berhasil diinisialisasi.
+2025/10/08 11:07:01 Database connection established
+2025/10/08 11:08:18 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 11:08:46 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 11:11:07 File logger berhasil diinisialisasi.
+2025/10/08 11:11:07 Database connection established
+2025/10/08 11:12:01 File logger berhasil diinisialisasi.
+2025/10/08 11:12:01 Database connection established
+2025/10/08 11:13:23 File logger berhasil diinisialisasi.
+2025/10/08 11:13:23 Database connection established
+2025/10/08 11:14:59 File logger berhasil diinisialisasi.
+2025/10/08 11:14:59 Database connection established
+2025/10/08 11:18:03 File logger berhasil diinisialisasi.
+2025/10/08 11:18:03 Database connection established
+2025/10/08 11:30:34 File logger berhasil diinisialisasi.
+2025/10/08 11:30:34 Database connection established
+2025/10/08 11:32:48 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 11:33:51 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 11:41:53 File logger berhasil diinisialisasi.
+2025/10/08 11:41:53 Database connection established
+2025/10/08 12:00:04 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:00:13 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:04:35 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:04:38 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:04:42 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:04:45 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:04:47 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:06:47 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:15:58 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:19:10 --- DEBUG: Terjadi error di repository --- pekerjaan not found
+2025/10/08 12:26:22 File logger berhasil diinisialisasi.
+2025/10/08 12:26:23 Database connection established
+2025/10/08 12:27:07 --- DEBUG: Terjadi error di repository --- error saat cek data pekerjaan: sql: Scan error on column index 1, name "is_delete": sql/driver: couldn't convert <nil> (<nil>) into type bool
+2025/10/08 12:28:57 File logger berhasil diinisialisasi.
+2025/10/08 12:28:57 Database connection established
+2025/10/08 12:36:40 [DEBUG] Locals: role=admin, user_id=1
+2025/10/08 12:37:55 File logger berhasil diinisialisasi.
+2025/10/08 12:37:55 Database connection established
+2025/10/08 12:48:01 File logger berhasil diinisialisasi.
+2025/10/08 12:48:01 Database connection established
+2025/10/17 05:23:26 File logger berhasil diinisialisasi.
+2025/10/17 05:23:26 Database connection established
+2025/10/17 05:31:50 --- DEBUG: Terjadi error di repository --- forbidden access
