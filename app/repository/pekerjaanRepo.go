@@ -196,8 +196,6 @@ func CountPekerjaanRepo(search string) (int, error) {
 	return total, nil
 }
 
-// Di dalam file: repository/pekerjaanRepo.go
-
 func SoftDeletePekerjaan(pekerjaanID int, userID int, role string) error {
 	tx, err := database.DB.Begin()
 	if err != nil {
@@ -297,70 +295,23 @@ func RestorePekerjaan(pekerjaanID int, userID int, role string) error {
 	return tx.Commit()
 }
 
-func GetAllTrashPekerjaanRepo() ([]model.Pekerjaan, error) {
-	query := `
-		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
-		       lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
-		       deskripsi_pekerjaan, is_delete, delete_by, deleted_at
-		FROM pekerjaan_alumni
-		WHERE COALESCE(is_delete, FALSE) = TRUE
-		ORDER BY deleted_at DESC
-	`
-
-	rows, err := database.DB.Query(query)
-	if err != nil {
-		return nil, fmt.Errorf("gagal mengambil trash pekerjaan: %w", err)
-	}
-	defer rows.Close()
-
-	var pekerjaanList []model.Pekerjaan
-	for rows.Next() {
-		var p model.Pekerjaan
-		err := rows.Scan(
-			&p.ID,
-			&p.AlumniID,
-			&p.NamaPerusahaan,
-			&p.PosisiJabatan,
-			&p.BidangIndustri,
-			&p.LokasiKerja,
-			&p.GajiRange,
-			&p.TanggalMulaiKerja,
-			&p.TanggalSelesaiKerja,
-			&p.Deskripsi,
-			&p.IsDelete,
-			&p.DeletedBy,
-			&p.DeletedAt,
-		)
-		if err != nil {
-			return nil, err
-		}
-		pekerjaanList = append(pekerjaanList, p)
-	}
-
-	return pekerjaanList, nil
-}
-
-func GetTrashPekerjaanByID(pekerjaanID int, userID int, role string) (*model.Pekerjaan, error) {
-	var p model.Pekerjaan
+func GetTrashPekerjaanByID(pekerjaanID int, userID int, role string) (*model.TrashPekerjaanResponse, error) {
+	var p model.TrashPekerjaanResponse
 	var err error
 
-	// Kolom yang akan di-SELECT, sesuaikan dengan struct model.Pekerjaan Anda
 	queryFields := `
 		pa.id, pa.alumni_id, pa.nama_perusahaan, pa.posisi_jabatan, pa.bidang_industri,
 		pa.lokasi_kerja, pa.gaji_range, pa.tanggal_mulai_kerja, pa.tanggal_selesai_kerja,
-		pa.deskripsi_pekerjaan, pa.is_delete, pa.delete_by, pa.deleted_at, pa.created_at, pa.updated_at
+		pa.status_pekerjaan, pa.deskripsi_pekerjaan, pa.created_at, pa.updated_at
 	`
-	// Kumpulan variabel tujuan untuk hasil Scan
 	scanDest := []interface{}{
 		&p.ID, &p.AlumniID, &p.NamaPerusahaan, &p.PosisiJabatan,
 		&p.BidangIndustri, &p.LokasiKerja, &p.GajiRange, &p.TanggalMulaiKerja,
-		&p.TanggalSelesaiKerja, &p.Deskripsi, &p.IsDelete,
-		&p.DeletedBy, &p.DeletedAt, &p.CreatedAt, &p.UpdatedAt,
+		&p.TanggalSelesaiKerja, &p.StatusPekerjaan, &p.Deskripsi,
+		&p.CreatedAt, &p.UpdatedAt,
 	}
 
-	// Logika pemilihan query berdasarkan role
 	if role == "admin" {
-		// Admin bisa melihat trash manapun hanya berdasarkan ID pekerjaan
 		query := fmt.Sprintf(`
 			SELECT %s
 			FROM pekerjaan_alumni pa
@@ -368,7 +319,6 @@ func GetTrashPekerjaanByID(pekerjaanID int, userID int, role string) (*model.Pek
 		`, queryFields)
 		err = database.DB.QueryRow(query, pekerjaanID).Scan(scanDest...)
 	} else {
-		// User harus divalidasi kepemilikannya melalui join ke tabel alumni
 		query := fmt.Sprintf(`
 			SELECT %s
 			FROM pekerjaan_alumni pa
@@ -378,16 +328,12 @@ func GetTrashPekerjaanByID(pekerjaanID int, userID int, role string) (*model.Pek
 		err = database.DB.QueryRow(query, pekerjaanID, userID).Scan(scanDest...)
 	}
 
-	// Menangani error, termasuk jika data tidak ditemukan (sql.ErrNoRows)
 	if err != nil {
 		return nil, err
 	}
 
 	return &p, nil
 }
-
-
-// Di dalam file: repository/pekerjaanRepo.go
 
 func HardDeletePekerjaan(pekerjaanID int, userID int, role string) error {
 	var query string
@@ -417,7 +363,6 @@ func HardDeletePekerjaan(pekerjaanID int, userID int, role string) error {
 		return fmt.Errorf("gagal memeriksa baris yang terpengaruh: %w", err)
 	}
 
-	// Jika tidak ada baris terhapus, berarti data tidak ditemukan, belum di-soft delete, atau bukan milik user.
 	if rowsAffected == 0 {
 		return ErrPekerjaanNotFound
 	}

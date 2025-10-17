@@ -200,7 +200,6 @@ func SoftDeletePekerjaan(c *fiber.Ctx) error {
 	})
 }
 
-
 func RestorePekerjaanService(c *fiber.Ctx) error {
 	idParam := c.Params("id")
 	pekerjaanID, err := strconv.Atoi(idParam)
@@ -226,7 +225,7 @@ func RestorePekerjaanService(c *fiber.Ctx) error {
 			})
 		}
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": "Gagal melakukan restore pekerjaan",
+			"error":   "Gagal melakukan restore pekerjaan",
 			"details": err.Error(),
 		})
 	}
@@ -236,30 +235,23 @@ func RestorePekerjaanService(c *fiber.Ctx) error {
 	})
 }
 
-
 func GetTrashPekerjaanByIDService(c *fiber.Ctx) error {
-	// Ambil ID pekerjaan dari parameter URL
 	pekerjaanID, err := strconv.Atoi(c.Params("id"))
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "ID pekerjaan tidak valid"})
 	}
 
-	// Ambil informasi user dari middleware JWT
 	userID := c.Locals("user_id").(int)
 	role := c.Locals("role").(string)
 
-	// Panggil repository untuk mendapatkan data trash
 	pekerjaan, err := repository.GetTrashPekerjaanByID(pekerjaanID, userID, role)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			// Jika tidak ditemukan (atau tidak punya akses), kirim 404
 			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "Data pekerjaan di trash tidak ditemukan"})
 		}
-		// Error server lainnya
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Gagal mengambil data dari trash"})
 	}
 
-	// Kirim response sukses
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"success": true,
 		"data":    pekerjaan,
@@ -267,17 +259,14 @@ func GetTrashPekerjaanByIDService(c *fiber.Ctx) error {
 }
 
 func HardDeletePekerjaanService(c *fiber.Ctx) error {
-	// Ambil ID pekerjaan dari parameter URL
 	pekerjaanID, err := strconv.Atoi(c.Params("id"))
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "ID pekerjaan tidak valid"})
 	}
 
-	// Ambil informasi user dari middleware JWT
 	userID := c.Locals("user_id").(int)
 	role := c.Locals("role").(string)
 
-	// Panggil repository dengan informasi user
 	err = repository.HardDeletePekerjaan(pekerjaanID, userID, role)
 	if err != nil {
 		if err == repository.ErrPekerjaanNotFound {
