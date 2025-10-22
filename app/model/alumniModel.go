@@ -1,28 +1,30 @@
 package model
 
-import (
-	"database/sql"
-	"time"
-)
+import "time"
 
+// Alumni (API Model) - Struct generik yang dikembalikan ke klien
+// Perhatikan: ID dan UserID diubah menjadi string agar konsisten.
+// sql.NullString diubah menjadi *string (pointer)
 type Alumni struct {
-	ID         int            `json:"id"`
-	UserID     int            `json:"user_id"`
-	NIM        string         `json:"nim"`
-	Nama       string         `json:"nama"`
-	Jurusan    string         `json:"jurusan"`
-	Angkatan   int            `json:"angkatan"`
-	TahunLulus int            `json:"tahun_lulus"`
-	Email      string         `json:"email"`
-	NoTelepon  sql.NullString `json:"no_telepon"`
-	Alamat     sql.NullString `json:"alamat"`
-	CreatedAt  time.Time      `json:"created_at"`
-	UpdatedAt  time.Time      `json:"updated_at"`
+	ID         string    `json:"id"`
+	UserID     string    `json:"user_id"`
+	NIM        string    `json:"nim"`
+	Nama       string    `json:"nama"`
+	Jurusan    string    `json:"jurusan"`
+	Angkatan   int       `json:"angkatan"`
+	TahunLulus int       `json:"tahun_lulus"`
+	Email      string    `json:"email"`
+	NoTelepon  *string   `json:"no_telepon,omitempty"`
+	Alamat     *string   `json:"alamat,omitempty"`
+	CreatedAt  time.Time `json:"created_at"`
+	UpdatedAt  time.Time `json:"updated_at"`
 }
 
+// CreateAlumniRequest (API Model)
+// Perhatikan: UserID diubah menjadi string
 type CreateAlumniRequest struct {
 	NIM        string `json:"nim"`
-	UserID     int    `json:"user_id"`
+	UserID     string `json:"user_id"`
 	Nama       string `json:"nama"`
 	Jurusan    string `json:"jurusan"`
 	Angkatan   int    `json:"angkatan"`
@@ -32,6 +34,8 @@ type CreateAlumniRequest struct {
 	Alamat     string `json:"alamat"`
 }
 
+// UpdateAlumniRequest (API Model)
+// Struct ini tidak perlu diubah karena tidak mengandung ID
 type UpdateAlumniRequest struct {
 	Nama       string `json:"nama"`
 	Jurusan    string `json:"jurusan"`
@@ -42,8 +46,10 @@ type UpdateAlumniRequest struct {
 	Alamat     string `json:"alamat"`
 }
 
+// AlumniPekerjaanResponse (API Model)
+// Perhatikan: ID diubah menjadi string
 type AlumniPekerjaanResponse struct {
-	ID             int    `json:"id"`
+	ID             string `json:"id"`
 	Jurusan        string `json:"jurusan"`
 	TahunLulus     int    `json:"tahun_lulus"`
 	BidangIndustri string `json:"bidang_industri"`

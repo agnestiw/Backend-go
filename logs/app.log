@@ -641,3 +641,135 @@
 2025/10/17 09:04:32 Database connection established
 2025/10/17 09:11:47 File logger berhasil diinisialisasi.
 2025/10/17 09:11:47 Database connection established
+2025/10/21 13:45:46 File logger berhasil diinisialisasi.
+2025/10/21 13:45:46 Database PostgreSQL connection established
+2025/10/21 13:45:46 Gagal koneksi ke MongoDB: error parsing uri: scheme must be "mongodb" or "mongodb+srv"
+2025/10/21 13:47:10 File logger berhasil diinisialisasi.
+2025/10/21 13:47:10 Database connection established
+2025/10/21 13:47:10 Gagal koneksi ke MongoDB: error parsing uri: scheme must be "mongodb" or "mongodb+srv"
+2025/10/21 14:04:31 File logger berhasil diinisialisasi.
+2025/10/21 14:04:31 Database connection established
+2025/10/21 14:04:31 Gagal koneksi ke MongoDB: error parsing uri: scheme must be "mongodb" or "mongodb+srv"
+2025/10/21 21:15:51 File logger berhasil diinisialisasi.
+2025/10/21 21:15:51 Database connection established
+2025/10/21 21:15:51 Error: MONGODB_URI tidak ditemukan di file .env. Pastikan file .env sudah disimpan.
+2025/10/21 21:17:03 File logger berhasil diinisialisasi.
+2025/10/21 21:17:03 Database connection established
+2025/10/21 21:17:03 Database connection established
+2025/10/21 21:17:03 Berhasil tersambung ke MongoDB!
+2025/10/21 21:21:18 File logger berhasil diinisialisasi.
+2025/10/21 21:21:18 Database connection established
+2025/10/21 21:21:18 Database connection established
+2025/10/21 21:21:18 Berhasil tersambung ke MongoDB!
+2025/10/21 21:22:50 File logger berhasil diinisialisasi.
+2025/10/21 21:22:50 Database connection established
+2025/10/21 21:22:50 Berhasil tersambung ke MongoDB!
+2025/10/22 08:05:29 File logger berhasil diinisialisasi.
+2025/10/22 08:05:29 Database connection established
+2025/10/22 08:05:29 Berhasil tersambung ke MongoDB!
+2025/10/22 08:09:08 File logger berhasil diinisialisasi.
+2025/10/22 08:09:08 Database connection established
+2025/10/22 08:09:08 Berhasil tersambung ke MongoDB!
+2025/10/22 11:39:38 File logger berhasil diinisialisasi.
+2025/10/22 11:39:38 Database connection established
+2025/10/22 11:39:38 Berhasil tersambung ke MongoDB!
+2025/10/22 11:52:14 File logger berhasil diinisialisasi.
+2025/10/22 11:52:14 Database connection established
+2025/10/22 11:52:14 Berhasil tersambung ke MongoDB!
+2025/10/22 11:53:15 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 11:58:14 File logger berhasil diinisialisasi.
+2025/10/22 11:58:14 Database connection established
+2025/10/22 11:58:14 Berhasil tersambung ke MongoDB!
+2025/10/22 11:58:25 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 11:58:30 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 11:58:42 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 11:59:08 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 12:04:05 File logger berhasil diinisialisasi.
+2025/10/22 12:04:06 Database connection established
+2025/10/22 12:04:06 Berhasil tersambung ke MongoDB!
+2025/10/22 12:05:44 File logger berhasil diinisialisasi.
+2025/10/22 12:05:44 Database connection established
+2025/10/22 12:05:44 Berhasil tersambung ke MongoDB!
+2025/10/22 12:06:50 File logger berhasil diinisialisasi.
+2025/10/22 12:06:50 Database connection established
+2025/10/22 12:06:50 Berhasil tersambung ke MongoDB!
+2025/10/22 12:07:42 File logger berhasil diinisialisasi.
+2025/10/22 12:07:42 Database connection established
+2025/10/22 12:07:42 Berhasil tersambung ke MongoDB!
+2025/10/22 12:13:44 File logger berhasil diinisialisasi.
+2025/10/22 12:13:44 Database connection established
+2025/10/22 12:13:44 Berhasil tersambung ke MongoDB!
+2025/10/22 12:15:09 File logger berhasil diinisialisasi.
+2025/10/22 12:15:09 Database connection established
+2025/10/22 12:15:09 Berhasil tersambung ke MongoDB!
+2025/10/22 12:16:33 File logger berhasil diinisialisasi.
+2025/10/22 12:16:33 Database connection established
+2025/10/22 12:16:33 Berhasil tersambung ke MongoDB!
+2025/10/22 15:10:01 File logger berhasil diinisialisasi.
+2025/10/22 15:10:01 Database connection established
+2025/10/22 15:10:01 Berhasil tersambung ke MongoDB!
+2025/10/22 15:18:07 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:19:21 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:19:23 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:22:34 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:22:36 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:23:29 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:25:28 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:27:38 File logger berhasil diinisialisasi.
+2025/10/22 15:27:38 Database connection established
+2025/10/22 15:27:38 Berhasil tersambung ke MongoDB!
+2025/10/22 15:28:57 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:29:13 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:35:47 File logger berhasil diinisialisasi.
+2025/10/22 15:35:47 Database connection established
+2025/10/22 15:35:47 Berhasil tersambung ke MongoDB!
+2025/10/22 15:35:57 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:36:00 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:36:08 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:36:10 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:36:27 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:37:13 File logger berhasil diinisialisasi.
+2025/10/22 15:37:13 Database connection established
+2025/10/22 15:37:13 Berhasil tersambung ke MongoDB!
+2025/10/22 15:37:20 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:37:22 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:37:40 [DEBUG] Locals: role=admin, user_id=1
+2025/10/22 15:38:43 File logger berhasil diinisialisasi.
+2025/10/22 15:38:44 Database connection established
+2025/10/22 15:38:44 Berhasil tersambung ke MongoDB!
+2025/10/22 18:38:06 File logger berhasil diinisialisasi.
+2025/10/22 18:38:06 Database connection established
+2025/10/22 18:38:06 Berhasil tersambung ke MongoDB!
+2025/10/22 18:40:06 File logger berhasil diinisialisasi.
+2025/10/22 18:40:06 Database connection established
+2025/10/22 18:40:06 Berhasil tersambung ke MongoDB!
+2025/10/22 19:05:50 File logger berhasil diinisialisasi.
+2025/10/22 19:05:50 Database connection established
+2025/10/22 19:05:50 Berhasil tersambung ke MongoDB!
+2025/10/22 19:15:13 File logger berhasil diinisialisasi.
+2025/10/22 19:15:13 Database connection established
+2025/10/22 19:15:13 Berhasil tersambung ke MongoDB!
+2025/10/22 19:16:24 File logger berhasil diinisialisasi.
+2025/10/22 19:16:24 Database connection established
+2025/10/22 19:16:24 Berhasil tersambung ke MongoDB!
+2025/10/22 19:19:15 File logger berhasil diinisialisasi.
+2025/10/22 19:19:15 Database connection established
+2025/10/22 19:19:15 Berhasil tersambung ke MongoDB!
+2025/10/22 19:46:45 File logger berhasil diinisialisasi.
+2025/10/22 19:46:45 Database connection established
+2025/10/22 19:46:45 Berhasil tersambung ke MongoDB!
+2025/10/22 19:47:26 File logger berhasil diinisialisasi.
+2025/10/22 19:47:26 Database connection established
+2025/10/22 19:47:26 Berhasil tersambung ke MongoDB!
+2025/10/22 19:48:57 File logger berhasil diinisialisasi.
+2025/10/22 19:48:57 Database connection established
+2025/10/22 19:48:57 Berhasil tersambung ke MongoDB!
+2025/10/22 19:52:00 File logger berhasil diinisialisasi.
+2025/10/22 19:52:01 Database connection established
+2025/10/22 19:52:01 Berhasil tersambung ke MongoDB!
+2025/10/22 19:53:28 File logger berhasil diinisialisasi.
+2025/10/22 19:53:28 Database connection established
+2025/10/22 19:53:28 Berhasil tersambung ke MongoDB!
+2025/10/22 19:59:08 File logger berhasil diinisialisasi.
+2025/10/22 19:59:08 Database connection established
+2025/10/22 19:59:08 Berhasil tersambung ke MongoDB!

@@ -17,6 +17,7 @@ func NewApp() *fiber.App {
 	app.Use(middleware.LoggerMiddleware)
 
 	route.SetupRoutes(app)
+	// route.SetupMongoRoute(app)
 
 	return app
 }

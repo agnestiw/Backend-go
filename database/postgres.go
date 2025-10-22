@@ -10,7 +10,7 @@ import (
 
 var DB *sql.DB
 
-func InitDB() {
+func InitPostgresDB() {
 	dsn := os.Getenv("DB_DSN")
 	var err error
 	DB, err = sql.Open("postgres", dsn)

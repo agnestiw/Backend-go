@@ -2,6 +2,7 @@ package route
 
 import (
 	"latihan2/app/service"
+	"latihan2/app/service/mongo"
 	"latihan2/middleware"
 
 	"github.com/gofiber/fiber/v2"
@@ -43,4 +44,14 @@ func SetupRoutes(app *fiber.App) {
 	pekerjaan.Post("/restore/:id", service.RestorePekerjaanService)
 	pekerjaan.Get("/trash/:id", service.GetTrashPekerjaanByIDService)
 	pekerjaan.Delete("/hard-delete/:id", service.HardDeletePekerjaanService)
+
+	pekerjaanm := protected.Group("/pekerjaan-m")
+	pekerjaanm.Get("/mongo/", mongo.GetAllPekerjaan)
+	pekerjaanm.Get("/mongo/:id/", middleware.JWTMiddleware(), mongo.GetPekerjaanByID)
+	pekerjaanm.Get("/mongo/alumni/:alumni_id/", middleware.AdminOnly(), mongo.GetPekerjaanByAlumniID)
+	pekerjaanm.Post("/mongo/", middleware.AdminOnly(), mongo.CreatePekerjaan)
+	pekerjaanm.Put("/mongo/:id", middleware.AdminOnly(), mongo.UpdatePekerjaan)
+	pekerjaanm.Delete("/mongo/soft-delete/:id", mongo.SoftDeletePekerjaan)
+	pekerjaanm.Post("/mongo/restore/:id", middleware.AdminOnly(), mongo.RestorePekerjaan)
+	pekerjaanm.Delete("/mongo/hard-delete/:id", middleware.AdminOnly(), mongo.HardDeletePekerjaan)
 }
