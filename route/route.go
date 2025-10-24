@@ -51,7 +51,7 @@ func SetupRoutes(app *fiber.App) {
 	pekerjaanm.Get("/mongo/alumni/:alumni_id/", middleware.AdminOnly(), mongo.GetPekerjaanByAlumniID)
 	pekerjaanm.Post("/mongo/", middleware.AdminOnly(), mongo.CreatePekerjaan)
 	pekerjaanm.Put("/mongo/:id", middleware.AdminOnly(), mongo.UpdatePekerjaan)
-	pekerjaanm.Delete("/mongo/soft-delete/:id", mongo.SoftDeletePekerjaan)
+	pekerjaanm.Delete("/mongo/soft-delete/:id", middleware.AdminOnly(), mongo.SoftDeletePekerjaan)
 	pekerjaanm.Post("/mongo/restore/:id", middleware.AdminOnly(), mongo.RestorePekerjaan)
 	pekerjaanm.Delete("/mongo/hard-delete/:id", middleware.AdminOnly(), mongo.HardDeletePekerjaan)
 }
