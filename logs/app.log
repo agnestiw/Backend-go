@@ -824,3 +824,52 @@
 2025/10/24 11:06:33 File logger berhasil diinisialisasi.
 2025/10/24 11:06:33 Database connection established
 2025/10/24 11:06:33 Berhasil tersambung ke MongoDB!
+2025/10/25 23:24:43 File logger berhasil diinisialisasi.
+2025/10/25 23:24:43 Database connection established
+2025/10/25 23:24:53 Tidak bisa ping ke MongoDB: server selection error: context deadline exceeded, current topology: { Type: Unknown, Servers: [{ Addr: localhost:27017, Type: Unknown, Last error: dial tcp [::1]:27017: connect: connection refused }, ] }
+2025/10/26 10:03:37 File logger berhasil diinisialisasi.
+2025/10/26 10:03:37 Database connection established
+2025/10/26 10:03:37 Berhasil tersambung ke MongoDB!
+2025/10/26 10:04:44 File logger berhasil diinisialisasi.
+2025/10/26 10:04:44 Database connection established
+2025/10/26 10:04:44 Berhasil tersambung ke MongoDB!
+2025/10/26 15:35:00 File logger berhasil diinisialisasi.
+2025/10/26 15:35:00 Database connection established
+2025/10/26 15:35:00 Berhasil tersambung ke MongoDB!
+2025/10/26 15:40:46 [DEBUG] Locals: role=admin, user_id=1
+2025/10/26 15:41:23 [DEBUG] Locals: role=admin, user_id=1
+2025/10/26 15:46:43 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 16:22:53 File logger berhasil diinisialisasi.
+2025/10/26 16:22:53 Database connection established
+2025/10/26 16:22:53 Berhasil tersambung ke MongoDB!
+2025/10/26 16:22:59 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 16:24:36 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 16:25:13 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 16:29:24 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 16:29:38 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 16:29:54 [DEBUG] Locals: role=admin, user_id=1
+2025/10/26 16:29:58 [DEBUG] Locals: role=admin, user_id=1
+2025/10/26 16:30:19 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 18:29:24 File logger berhasil diinisialisasi.
+2025/10/26 18:29:24 Database connection established
+2025/10/26 18:29:24 Berhasil tersambung ke MongoDB!
+2025/10/26 18:30:02 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 18:30:21 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 18:30:52 [DEBUG] Locals: role=admin, user_id=1
+2025/10/26 18:31:05 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 18:31:40 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 18:39:57 File logger berhasil diinisialisasi.
+2025/10/26 18:39:57 Database connection established
+2025/10/26 18:39:57 Berhasil tersambung ke MongoDB!
+2025/10/26 18:40:13 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 18:48:22 [DEBUG] Locals: role=user, user_id=16
+2025/10/26 18:53:42 [DEBUG] Locals: role=user, user_id=16
+2025/10/26 18:57:15 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 19:07:37 File logger berhasil diinisialisasi.
+2025/10/26 19:07:37 Database connection established
+2025/10/26 19:07:37 Berhasil tersambung ke MongoDB!
+2025/10/26 19:07:42 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 19:09:42 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 19:10:12 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 19:11:22 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 19:11:41 [DEBUG] Locals: role=user, user_id=15

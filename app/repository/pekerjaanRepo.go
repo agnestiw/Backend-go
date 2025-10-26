@@ -15,84 +15,150 @@ var (
 	ErrForbidden         = errors.New("forbidden access")
 )
 
-func GetPekerjaanRepo(search, sortBy, order string, limit, offset int) ([]model.Pekerjaan, error) {
-	query := fmt.Sprintf(`
-		SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri, lokasi_kerja,
-		       gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja, status_pekerjaan,
-		       deskripsi_pekerjaan, created_at, updated_at
-		FROM pekerjaan_alumni
-		WHERE nama_perusahaan ILIKE $1 
-		   OR posisi_jabatan ILIKE $1 
-		   OR bidang_industri ILIKE $1 
-		   OR lokasi_kerja ILIKE $1
-		ORDER BY %s %s
-		LIMIT $2 OFFSET $3
-	`, sortBy, order)
-
-	rows, err := database.DB.Query(query, "%"+search+"%", limit, offset)
-	if err != nil {
-		log.Println("Query error:", err)
-		return nil, err
-	}
-	defer rows.Close()
-
-	var pekerjaanList []model.Pekerjaan
-	for rows.Next() {
-		var p model.Pekerjaan
-		if err := rows.Scan(
-			&p.ID,
-			&p.AlumniID,
-			&p.NamaPerusahaan,
-			&p.PosisiJabatan,
-			&p.BidangIndustri,
-			&p.LokasiKerja,
-			&p.GajiRange,
-			&p.TanggalMulaiKerja,
-			&p.TanggalSelesaiKerja,
-			&p.StatusPekerjaan,
-			&p.Deskripsi,
-			&p.CreatedAt,
-			&p.UpdatedAt,
-		); err != nil {
-			return nil, err
-		}
-		pekerjaanList = append(pekerjaanList, p)
-	}
-
-	return pekerjaanList, nil
-}
-
-func CountPekerjaanRepo(search string) (int, error) {
-	var total int
-	countQuery := `
-		SELECT COUNT(*)
-		FROM pekerjaan_alumni
-		WHERE nama_perusahaan ILIKE $1 
-		   OR posisi_jabatan ILIKE $1 
-		   OR bidang_industri ILIKE $1 
-		   OR lokasi_kerja ILIKE $1
-	`
-	err := database.DB.QueryRow(countQuery, "%"+search+"%").Scan(&total)
-	if err != nil && err != sql.ErrNoRows {
-		return 0, err
-	}
-	return total, nil
-}
-
-func GetPekerjaanByIDRepo(id int) (*model.Pekerjaan, error) {
-	var p model.Pekerjaan
-	query := `
-        SELECT id, alumni_id, nama_perusahaan, posisi_jabatan, bidang_industri,
-               lokasi_kerja, gaji_range, tanggal_mulai_kerja, tanggal_selesai_kerja,
-               status_pekerjaan, deskripsi_pekerjaan, created_at
-        FROM pekerjaan_alumni
-        WHERE id = $1
+func GetPekerjaanRepo(search, sortBy, order string, limit, offset int, role string, userID int) ([]model.Pekerjaan, error) {
+    
+    // 1. Buat query dasar
+    baseQuery := `
+        FROM pekerjaan_alumni pa
+        LEFT JOIN alumni a ON pa.alumni_id = a.id
+        WHERE (
+            pa.nama_perusahaan ILIKE $1 
+            OR pa.posisi_jabatan ILIKE $1 
+            OR pa.bidang_industri ILIKE $1 
+            OR pa.lokasi_kerja ILIKE $1
+        ) AND pa.is_delete = false
     `
-	err := database.DB.QueryRow(query, id).Scan(
+    // 2. Siapkan argumen
+    args := []interface{}{"%" + search + "%"}
+    
+    // 3. Tambahkan filter user jika role bukan admin
+    if role == "user" {
+        baseQuery += " AND a.user_id = $2"
+        args = append(args, userID)
+    }
+
+    // 4. Buat query SELECT
+    selectQuery := fmt.Sprintf(`
+        SELECT pa.id, pa.alumni_id, pa.nama_perusahaan, pa.posisi_jabatan, pa.bidang_industri, pa.lokasi_kerja,
+               pa.gaji_range, pa.tanggal_mulai_kerja, pa.tanggal_selesai_kerja, pa.status_pekerjaan,
+               pa.deskripsi_pekerjaan, pa.created_at, pa.updated_at
+        %s
+        ORDER BY %s %s
+        LIMIT $%d OFFSET $%d
+    `, baseQuery, sortBy, order, len(args)+1, len(args)+2) // Penomoran $ sudah benar
+    
+    args = append(args, limit, offset)
+
+    // 5. Eksekusi
+    rows, err := database.DB.Query(selectQuery, args...)
+    if err != nil {
+        log.Println("Query error:", err)
+        return nil, err
+    }
+    defer rows.Close()
+
+    // 6. Scan hasilnya (INI BAGIAN YANG PERLU DILENGKAPI)
+    var pekerjaanList []model.Pekerjaan
+    for rows.Next() {
+        var p model.Pekerjaan
+        if err := rows.Scan(
+            &p.ID,
+            &p.AlumniID,
+            &p.NamaPerusahaan,
+            &p.PosisiJabatan,
+            &p.BidangIndustri,
+            &p.LokasiKerja,
+            &p.GajiRange,
+            &p.TanggalMulaiKerja,
+            &p.TanggalSelesaiKerja,
+            &p.StatusPekerjaan,
+            &p.Deskripsi,
+            &p.CreatedAt,
+            &p.UpdatedAt,
+        ); err != nil {
+            return nil, err // Tangani error saat scanning
+        }
+        pekerjaanList = append(pekerjaanList, p)
+    }
+
+    // Selalu cek error setelah loop rows
+    if err = rows.Err(); err != nil {
+        return nil, err
+    }
+
+    return pekerjaanList, nil
+}
+
+func CountPekerjaanRepo(search string, role string, userID int) (int, error) {
+    var total int
+    baseQuery := `
+        FROM pekerjaan_alumni pa
+        LEFT JOIN alumni a ON pa.alumni_id = a.id
+        WHERE (
+            pa.nama_perusahaan ILIKE $1 
+            OR pa.posisi_jabatan ILIKE $1 
+            OR pa.bidang_industri ILIKE $1 
+            OR pa.lokasi_kerja ILIKE $1
+        ) AND pa.is_delete = false
+    `
+    args := []interface{}{"%" + search + "%"}
+
+    if role == "user" {
+        baseQuery += " AND a.user_id = $2"
+        args = append(args, userID)
+    }
+    countQuery := fmt.Sprintf("SELECT count(*) %s", baseQuery)
+
+    err := database.DB.QueryRow(countQuery, args...).Scan(&total)
+    if err != nil {
+        log.Printf("Error counting pekerjaan: %v", err)
+        return 0, err
+    }
+
+    return total, nil
+}
+
+func GetPekerjaanByIDRepo(id int, userID int, role string) (*model.Pekerjaan, error) {
+	var p model.Pekerjaan
+	
+    // Kolom-kolom yang akan di-SELECT
+	queryFields := `
+        pa.id, pa.alumni_id, pa.nama_perusahaan, pa.posisi_jabatan, pa.bidang_industri,
+        pa.lokasi_kerja, pa.gaji_range, pa.tanggal_mulai_kerja, pa.tanggal_selesai_kerja,
+        pa.status_pekerjaan, pa.deskripsi_pekerjaan, pa.created_at, pa.updated_at
+    ` // <-- 'updated_at' sudah ditambahkan
+    
+    // Tujuan Scan
+	scanDest := []interface{}{
 		&p.ID, &p.AlumniID, &p.NamaPerusahaan, &p.PosisiJabatan,
 		&p.BidangIndustri, &p.LokasiKerja, &p.GajiRange, &p.TanggalMulaiKerja,
 		&p.TanggalSelesaiKerja, &p.StatusPekerjaan, &p.Deskripsi, &p.CreatedAt,
-	)
+		&p.UpdatedAt, // <-- 'UpdatedAt' sudah ditambahkan
+	}
+
+	var query string
+    var err error
+
+	if role == "admin" {
+        // Admin bisa lihat data manapun (yang belum di-soft-delete)
+		query = fmt.Sprintf(`
+            SELECT %s
+            FROM pekerjaan_alumni pa
+            WHERE pa.id = $1 AND pa.is_delete = false
+        `, queryFields)
+		err = database.DB.QueryRow(query, id).Scan(scanDest...)
+	
+    } else {
+        // User hanya bisa lihat data miliknya sendiri (yang belum di-soft-delete)
+		query = fmt.Sprintf(`
+            SELECT %s
+            FROM pekerjaan_alumni pa
+            JOIN alumni a ON pa.alumni_id = a.id
+            WHERE pa.id = $1 AND a.user_id = $2 AND pa.is_delete = false
+        `, queryFields)
+		err = database.DB.QueryRow(query, id, userID).Scan(scanDest...)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -202,7 +268,7 @@ func CreatePekerjaan(req model.CreatePekerjaanRequest) (*model.Pekerjaan, error)
 	return &p, nil
 }
 
-func UpdatePekerjaan(id int, req model.UpdatePekerjaanRequest) (*model.Pekerjaan, error) {
+func UpdatePekerjaan(id int, userID int, role string, req model.UpdatePekerjaanRequest) (*model.Pekerjaan, error) {
 	var tglSelesaiVal sql.NullTime
 	if req.TanggalSelesaiKerja != "" {
 		if t, err := time.Parse("2006-01-02", req.TanggalSelesaiKerja); err == nil {
@@ -213,8 +279,8 @@ func UpdatePekerjaan(id int, req model.UpdatePekerjaanRequest) (*model.Pekerjaan
 	query := `
 		UPDATE pekerjaan_alumni
 		SET nama_perusahaan=$1, posisi_jabatan=$2, bidang_industri=$3, lokasi_kerja=$4,
-		    gaji_range=$5, tanggal_mulai_kerja=$6, tanggal_selesai_kerja=$7,
-		    status_pekerjaan=$8, deskripsi_pekerjaan=$9
+			gaji_range=$5, tanggal_mulai_kerja=$6, tanggal_selesai_kerja=$7,
+			status_pekerjaan=$8, deskripsi_pekerjaan=$9
 		WHERE id=$10
 	`
 	_, err := database.DB.Exec(query,
@@ -225,7 +291,7 @@ func UpdatePekerjaan(id int, req model.UpdatePekerjaanRequest) (*model.Pekerjaan
 	if err != nil {
 		return nil, err
 	}
-	return GetPekerjaanByIDRepo(id)
+	return GetPekerjaanByIDRepo(id, userID, role)
 }
 
 func SoftDeletePekerjaan(pekerjaanID int, userID int, role string) error {
@@ -328,43 +394,50 @@ func RestorePekerjaan(pekerjaanID int, userID int, role string) error {
 }
 
 func GetTrashPekerjaanByID(pekerjaanID int, userID int, role string) (*model.TrashPekerjaanResponse, error) {
-	var p model.TrashPekerjaanResponse
-	var err error
+    var p model.TrashPekerjaanResponse
+    var err error
 
-	queryFields := `
-		pa.id, pa.alumni_id, pa.nama_perusahaan, pa.posisi_jabatan, pa.bidang_industri,
-		pa.lokasi_kerja, pa.gaji_range, pa.tanggal_mulai_kerja, pa.tanggal_selesai_kerja,
-		pa.status_pekerjaan, pa.deskripsi_pekerjaan, pa.created_at, pa.updated_at
-	`
-	scanDest := []interface{}{
-		&p.ID, &p.AlumniID, &p.NamaPerusahaan, &p.PosisiJabatan,
-		&p.BidangIndustri, &p.LokasiKerja, &p.GajiRange, &p.TanggalMulaiKerja,
-		&p.TanggalSelesaiKerja, &p.StatusPekerjaan, &p.Deskripsi,
-		&p.CreatedAt, &p.UpdatedAt,
-	}
+    // PERBAIKAN: Tambahkan 3 kolom soft delete di akhir
+    queryFields := `
+        pa.id, pa.alumni_id, pa.nama_perusahaan, pa.posisi_jabatan, pa.bidang_industri,
+        pa.lokasi_kerja, pa.gaji_range, pa.tanggal_mulai_kerja, pa.tanggal_selesai_kerja,
+        pa.status_pekerjaan, pa.deskripsi_pekerjaan, pa.created_at, pa.updated_at,
+        pa.is_delete, pa.delete_by, pa.deleted_at
+    `
 
-	if role == "admin" {
-		query := fmt.Sprintf(`
-			SELECT %s
-			FROM pekerjaan_alumni pa
-			WHERE pa.id = $1 AND pa.is_delete = TRUE
-		`, queryFields)
-		err = database.DB.QueryRow(query, pekerjaanID).Scan(scanDest...)
-	} else {
-		query := fmt.Sprintf(`
-			SELECT %s
-			FROM pekerjaan_alumni pa
-			JOIN alumni a ON pa.alumni_id = a.id
-			WHERE pa.id = $1 AND a.user_id = $2 AND pa.is_delete = TRUE
-		`, queryFields)
-		err = database.DB.QueryRow(query, pekerjaanID, userID).Scan(scanDest...)
-	}
+    // PERBAIKAN: Tambahkan 3 field tujuan untuk soft delete di akhir
+    scanDest := []interface{}{
+        &p.ID, &p.AlumniID, &p.NamaPerusahaan, &p.PosisiJabatan,
+        &p.BidangIndustri, &p.LokasiKerja, &p.GajiRange, &p.TanggalMulaiKerja,
+        &p.TanggalSelesaiKerja, &p.StatusPekerjaan, &p.Deskripsi,
+        &p.CreatedAt, &p.UpdatedAt,
+        &p.IsDelete, &p.DeletedBy, &p.DeletedAt, // <-- Ditambahkan di sini
+    }
 
-	if err != nil {
-		return nil, err
-	}
+    if role == "admin" {
+        query := fmt.Sprintf(`
+            SELECT %s
+            FROM pekerjaan_alumni pa
+            WHERE pa.id = $1 AND pa.is_delete = TRUE
+        `, queryFields)
+        // Gunakan ... untuk "membongkar" slice scanDest
+        err = database.DB.QueryRow(query, pekerjaanID).Scan(scanDest...) 
+    } else {
+        query := fmt.Sprintf(`
+            SELECT %s
+            FROM pekerjaan_alumni pa
+            JOIN alumni a ON pa.alumni_id = a.id
+            WHERE pa.id = $1 AND a.user_id = $2 AND pa.is_delete = TRUE
+        `, queryFields)
+        // Gunakan ... untuk "membongkar" slice scanDest
+        err = database.DB.QueryRow(query, pekerjaanID, userID).Scan(scanDest...) 
+    }
 
-	return &p, nil
+    if err != nil {
+        return nil, err
+    }
+
+    return &p, nil
 }
 
 func HardDeletePekerjaan(pekerjaanID int, userID int, role string) error {

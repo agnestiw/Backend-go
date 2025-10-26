@@ -16,31 +16,97 @@ import (
 	// "github.com/golang-jwt/jwt/v5"
 )
 
+func GetPekerjaanService(c *fiber.Ctx) error {
+	// AMBIL ROLE DAN USER ID
+    userID, _ := c.Locals("user_id").(int)
+    role, _ := c.Locals("role").(string)
+
+	page, _ := strconv.Atoi(c.Query("page", "1"))
+	limit, _ := strconv.Atoi(c.Query("limit", "10"))
+	sortBy := c.Query("sortBy", "id")
+	order := c.Query("order", "asc")
+	search := c.Query("search", "")
+	offset := (page - 1) * limit
+
+	sortByWhitelist := map[string]bool{
+		"id":                    true,
+		"alumni_id":             true,
+		"nama_perusahaan":       true,
+		"posisi_jabatan":        true,
+		"bidang_industri":       true,
+		"lokasi_kerja":          true,
+		"gaji_range":            true,
+		"tanggal_mulai_kerja":   true,
+		"tanggal_selesai_kerja": true,
+		"status_pekerjaan":      true,
+		"created_at":            true,
+		"updated_at":            true,
+	}
+	if !sortByWhitelist[sortBy] {
+		sortBy = "id"
+	}
+	if strings.ToLower(order) != "desc" {
+		order = "asc"
+	}
+
+	pekerjaan, err := repository.GetPekerjaanRepo(search, sortBy, order, limit, offset, role, userID)
+	if err != nil {
+		return c.Status(500).JSON(fiber.Map{
+			"error":   "Failed to fetch alumni",
+			"details": err.Error(),
+			"query":   fmt.Sprintf("search=%s, sortBy=%s, order=%s, limit=%d, offset=%d, role=%s", search, sortBy, order, limit, offset),
+		})
+	}
+
+	total, err := repository.CountPekerjaanRepo(search, role, userID)
+	if err != nil {
+		return c.Status(500).JSON(fiber.Map{"error": "Failed to count pekerjaan alumni"})
+	}
+
+	response := model.PekerjaanResponse{
+		Data: pekerjaan,
+		Meta: model.MetaInfo{
+			Page:   page,
+			Limit:  limit,
+			Total:  total,
+			Pages:  (total + limit - 1) / limit,
+			SortBy: sortBy,
+			Order:  order,
+			Search: search,
+		},
+	}
+
+	return c.JSON(response)
+}
+
 func GetPekerjaanByID(c *fiber.Ctx) error {
 	log.Printf("[DEBUG] Locals: role=%v, user_id=%v", c.Locals("role"), c.Locals("user_id"))
 
-	role := c.Locals("role").(string)
-	if role == "user" {
-		return c.Status(404).JSON(fiber.Map{"error": "Data tidak ada"})
+	// Ambil role dan userID
+	role, okRole := c.Locals("role").(string)
+	userID, okUserID := c.Locals("user_id").(int)
+	if !okRole || !okUserID {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Informasi user tidak valid"})
 	}
+    
+    // BLOK 'if role == "user"' YANG SALAH SUDAH DIHAPUS
 
-	// ambil id
+	// ambil id dari parameter URL
 	id, err := strconv.Atoi(c.Params("id"))
 	if err != nil {
-		return c.Status(400).JSON(fiber.Map{"error": "Invalid pekerjaan ID"})
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid pekerjaan ID"})
 	}
 
-	pekerjaan, err := repository.GetPekerjaanByIDRepo(id)
+    // Teruskan role dan userID ke repository untuk pengecekan keamanan
+	pekerjaan, err := repository.GetPekerjaanByIDRepo(id, userID, role)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			return c.Status(404).JSON(fiber.Map{"error": "Pekerjaan not found"})
+            // Ini adalah tempat yang benar untuk 404
+			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "Pekerjaan not found"})
 		}
-		return c.Status(500).JSON(fiber.Map{"error": "Failed to fetch pekerjaan"})
+		log.Printf("[ERROR] Gagal GetPekerjaanByIDRepo: %v", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to fetch pekerjaan"})
 	}
-
-	// if role != "admin" && pekerjaan.IsDelete {
-	// 	return c.Status(404).JSON(fiber.Map{"error": "Data tidak ada"})
-	// }
 
 	return c.JSON(fiber.Map{"data": pekerjaan, "success": true})
 }
@@ -90,7 +156,10 @@ func UpdatePekerjaan(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Request body tidak valid"})
 	}
 
-	updatedPekerjaan, err := repository.UpdatePekerjaan(id, req)
+	userID := c.Locals("user_id").(int)
+	role := c.Locals("role").(string)
+
+	updatedPekerjaan, err := repository.UpdatePekerjaan(id, userID, role, req)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "Pekerjaan tidak ditemukan untuk diupdate"})
@@ -103,68 +172,6 @@ func UpdatePekerjaan(c *fiber.Ctx) error {
 		"data":    updatedPekerjaan,
 		"message": "Pekerjaan berhasil diupdate",
 	})
-}
-
-func GetPekerjaanService(c *fiber.Ctx) error {
-	page, _ := strconv.Atoi(c.Query("page", "1"))
-	limit, _ := strconv.Atoi(c.Query("limit", "10"))
-	sortBy := c.Query("sortBy", "id")
-	order := c.Query("order", "asc")
-	search := c.Query("search", "")
-	offset := (page - 1) * limit
-
-	sortByWhitelist := map[string]bool{
-		"id":                    true,
-		"alumni_id":             true,
-		"nama_perusahaan":       true,
-		"posisi_jabatan":        true,
-		"bidang_industri":       true,
-		"lokasi_kerja":          true,
-		"gaji_range":            true,
-		"tanggal_mulai_kerja":   true,
-		"tanggal_selesai_kerja": true,
-		"status_pekerjaan":      true,
-		"created_at":            true,
-		"updated_at":            true,
-		"deleted_at":            true,
-		"is_delete":             true,
-		"delete_by":             true,
-	}
-	if !sortByWhitelist[sortBy] {
-		sortBy = "id"
-	}
-	if strings.ToLower(order) != "desc" {
-		order = "asc"
-	}
-
-	pekerjaan, err := repository.GetPekerjaanRepo(search, sortBy, order, limit, offset)
-	if err != nil {
-		return c.Status(500).JSON(fiber.Map{
-			"error":   "Failed to fetch alumni",
-			"details": err.Error(),
-			"query":   fmt.Sprintf("search=%s, sortBy=%s, order=%s, limit=%d, offset=%d, role=%s", search, sortBy, order, limit, offset),
-		})
-	}
-
-	total, err := repository.CountPekerjaanRepo(search)
-	if err != nil {
-		return c.Status(500).JSON(fiber.Map{"error": "Failed to count pekerjaan alumni"})
-	}
-
-	response := model.PekerjaanResponse{
-		Data: pekerjaan,
-		Meta: model.MetaInfo{
-			Page:   page,
-			Limit:  limit,
-			Total:  total,
-			Pages:  (total + limit - 1) / limit,
-			SortBy: sortBy,
-			Order:  order,
-			Search: search,
-		},
-	}
-
-	return c.JSON(response)
 }
 
 func SoftDeletePekerjaan(c *fiber.Ctx) error {
