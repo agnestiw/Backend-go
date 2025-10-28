@@ -873,3 +873,487 @@
 2025/10/26 19:10:12 [DEBUG] Locals: role=user, user_id=15
 2025/10/26 19:11:22 [DEBUG] Locals: role=user, user_id=15
 2025/10/26 19:11:41 [DEBUG] Locals: role=user, user_id=15
+2025/10/26 22:48:25 File logger berhasil diinisialisasi.
+2025/10/26 22:48:25 Database connection established
+2025/10/26 22:48:25 Berhasil tersambung ke MongoDB!
+2025/10/27 16:45:43 File logger berhasil diinisialisasi.
+2025/10/27 16:45:43 Database connection established
+2025/10/27 16:45:43 Berhasil tersambung ke MongoDB!
+2025/10/27 16:47:28 File logger berhasil diinisialisasi.
+2025/10/27 16:47:28 Database connection established
+2025/10/27 16:47:28 Berhasil tersambung ke MongoDB!
+2025/10/27 16:50:03 File logger berhasil diinisialisasi.
+2025/10/27 16:50:03 Database connection established
+2025/10/27 16:50:03 Berhasil tersambung ke MongoDB!
+2025/10/27 16:53:21 File logger berhasil diinisialisasi.
+2025/10/27 16:53:21 Database connection established
+2025/10/27 16:53:21 Berhasil tersambung ke MongoDB!
+2025/10/27 16:53:54 File logger berhasil diinisialisasi.
+2025/10/27 16:53:54 Database connection established
+2025/10/27 16:53:54 Berhasil tersambung ke MongoDB!
+2025/10/27 17:08:06 File logger berhasil diinisialisasi.
+2025/10/27 17:08:06 Database connection established
+2025/10/27 17:08:06 Berhasil tersambung ke MongoDB!
+2025/10/27 17:09:39 File logger berhasil diinisialisasi.
+2025/10/27 17:09:39 Database connection established
+2025/10/27 17:09:39 Berhasil tersambung ke MongoDB!
+2025/10/27 17:10:27 File logger berhasil diinisialisasi.
+2025/10/27 17:10:27 Database connection established
+2025/10/27 17:10:27 Berhasil tersambung ke MongoDB!
+2025/10/27 17:13:47 File logger berhasil diinisialisasi.
+2025/10/27 17:13:47 Database connection established
+2025/10/27 17:13:47 Berhasil tersambung ke MongoDB!
+2025/10/27 17:14:43 File logger berhasil diinisialisasi.
+2025/10/27 17:14:43 Database connection established
+2025/10/27 17:14:43 Berhasil tersambung ke MongoDB!
+2025/10/27 17:19:37 File logger berhasil diinisialisasi.
+2025/10/27 17:19:37 Database connection established
+2025/10/27 17:19:37 Berhasil tersambung ke MongoDB!
+2025/10/27 17:19:40 File logger berhasil diinisialisasi.
+2025/10/27 17:19:41 Database connection established
+2025/10/27 17:19:41 Berhasil tersambung ke MongoDB!
+2025/10/27 17:19:48 [34m[AuthRequired] Middleware aktif untuk path: /api/mongo/login[0m
+2025/10/27 17:19:48 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mongo/login[0m
+2025/10/27 17:20:12 [34m[AuthRequired] Middleware aktif untuk path: /api/mongo/users-m[0m
+2025/10/27 17:20:12 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mongo/users-m[0m
+2025/10/27 17:21:41 File logger berhasil diinisialisasi.
+2025/10/27 17:21:41 Database connection established
+2025/10/27 17:21:42 Berhasil tersambung ke MongoDB!
+2025/10/27 17:21:57 [34m[AuthRequired] Middleware aktif untuk path: /api/mongo/login[0m
+2025/10/27 17:21:57 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mongo/login[0m
+2025/10/27 17:22:10 [34m[AuthRequired] Middleware aktif untuk path: /api/mongo/login[0m
+2025/10/27 17:22:10 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mongo/login[0m
+2025/10/27 17:22:12 [34m[AuthRequired] Middleware aktif untuk path: /api/mongo/login[0m
+2025/10/27 17:22:12 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mongo/login[0m
+2025/10/27 17:23:49 File logger berhasil diinisialisasi.
+2025/10/27 17:23:49 Database connection established
+2025/10/27 17:23:49 Berhasil tersambung ke MongoDB!
+2025/10/27 17:24:01 [34m[AuthRequired] Middleware aktif untuk path: /api/mongo/login[0m
+2025/10/27 17:24:01 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mongo/login[0m
+2025/10/27 17:24:47 File logger berhasil diinisialisasi.
+2025/10/27 17:24:47 Database connection established
+2025/10/27 17:24:47 Berhasil tersambung ke MongoDB!
+2025/10/27 17:24:53 [34m[AuthRequired] Middleware aktif untuk path: /api/mongo/login[0m
+2025/10/27 17:24:53 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mongo/login[0m
+2025/10/27 17:29:03 File logger berhasil diinisialisasi.
+2025/10/27 17:29:03 Database connection established
+2025/10/27 17:29:03 Berhasil tersambung ke MongoDB!
+2025/10/27 17:34:04 File logger berhasil diinisialisasi.
+2025/10/27 17:34:04 Database connection established
+2025/10/27 17:34:04 Berhasil tersambung ke MongoDB!
+2025/10/27 17:51:11 File logger berhasil diinisialisasi.
+2025/10/27 17:51:11 Database connection established
+2025/10/27 17:51:11 Berhasil tersambung ke MongoDB!
+2025/10/27 17:53:21 File logger berhasil diinisialisasi.
+2025/10/27 17:53:21 Database connection established
+2025/10/27 17:53:21 Berhasil tersambung ke MongoDB!
+2025/10/27 18:02:38 File logger berhasil diinisialisasi.
+2025/10/27 18:02:38 Database connection established
+2025/10/27 18:02:38 Berhasil tersambung ke MongoDB!
+2025/10/27 18:06:00 File logger berhasil diinisialisasi.
+2025/10/27 18:06:00 Database connection established
+2025/10/27 18:06:00 Berhasil tersambung ke MongoDB!
+2025/10/27 18:06:23 File logger berhasil diinisialisasi.
+2025/10/27 18:06:23 Database connection established
+2025/10/27 18:06:24 Berhasil tersambung ke MongoDB!
+2025/10/27 18:07:54 File logger berhasil diinisialisasi.
+2025/10/27 18:07:54 Database connection established
+2025/10/27 18:07:54 Berhasil tersambung ke MongoDB!
+2025/10/27 18:19:17 File logger berhasil diinisialisasi.
+2025/10/27 18:19:17 Database connection established
+2025/10/27 18:19:17 Berhasil tersambung ke MongoDB!
+2025/10/27 22:16:28 File logger berhasil diinisialisasi.
+2025/10/27 22:16:28 Database connection established
+2025/10/27 22:16:28 Berhasil tersambung ke MongoDB!
+2025/10/27 22:17:10 File logger berhasil diinisialisasi.
+2025/10/27 22:17:10 Database connection established
+2025/10/27 22:17:10 Berhasil tersambung ke MongoDB!
+2025/10/27 22:17:41 File logger berhasil diinisialisasi.
+2025/10/27 22:17:41 Database connection established
+2025/10/27 22:17:41 Berhasil tersambung ke MongoDB!
+2025/10/27 22:18:44 File logger berhasil diinisialisasi.
+2025/10/27 22:18:44 Database connection established
+2025/10/27 22:18:44 Berhasil tersambung ke MongoDB!
+2025/10/27 22:32:56 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users[0m
+2025/10/27 22:32:56 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users[0m
+2025/10/27 22:36:08 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users[0m
+2025/10/27 22:36:08 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users[0m
+2025/10/27 22:36:50 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:36:50 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:45:22 File logger berhasil diinisialisasi.
+2025/10/27 22:45:22 Database connection established
+2025/10/27 22:45:22 Berhasil tersambung ke MongoDB!
+2025/10/27 22:45:26 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:45:26 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:45:28 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:45:28 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:45:42 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/a[0m
+2025/10/27 22:45:42 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/a[0m
+2025/10/27 22:45:51 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:45:51 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:46:17 File logger berhasil diinisialisasi.
+2025/10/27 22:46:17 Database connection established
+2025/10/27 22:46:17 Berhasil tersambung ke MongoDB!
+2025/10/27 22:46:20 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:46:20 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:50:59 File logger berhasil diinisialisasi.
+2025/10/27 22:50:59 Database connection established
+2025/10/27 22:50:59 Berhasil tersambung ke MongoDB!
+2025/10/27 22:51:06 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:51:06 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:51:38 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:51:38 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:52:29 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/27 22:52:29 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/users/[0m
+2025/10/27 22:52:34 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/68ff559733497822a45ed183[0m
+2025/10/27 22:52:34 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/users/68ff559733497822a45ed183[0m
+2025/10/27 22:53:12 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/68ff559733497822a45ed183[0m
+2025/10/27 22:53:12 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/68ff559733497822a45ed183[0m
+2025/10/27 22:54:13 File logger berhasil diinisialisasi.
+2025/10/27 22:54:13 Database connection established
+2025/10/27 22:54:13 Berhasil tersambung ke MongoDB!
+2025/10/27 22:54:15 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/68ff559733497822a45ed183[0m
+2025/10/27 22:54:15 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/68ff559733497822a45ed183[0m
+2025/10/27 22:54:32 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/68ff559733497822a45ed18b[0m
+2025/10/27 22:54:32 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/68ff559733497822a45ed18b[0m
+2025/10/27 22:55:05 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/68ff559733497822a45ed18b[0m
+2025/10/27 22:55:05 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/users/68ff559733497822a45ed18b[0m
+2025/10/28 06:42:54 File logger berhasil diinisialisasi.
+2025/10/28 06:42:54 Database connection established
+2025/10/28 06:42:54 Berhasil tersambung ke MongoDB!
+2025/10/28 06:43:27 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/[0m
+2025/10/28 06:43:27 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/files/[0m
+2025/10/28 06:45:24 File logger berhasil diinisialisasi.
+2025/10/28 06:45:24 Database connection established
+2025/10/28 06:45:24 Berhasil tersambung ke MongoDB!
+2025/10/28 06:45:29 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/upload[0m
+2025/10/28 06:45:29 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/files/upload[0m
+2025/10/28 06:45:38 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/[0m
+2025/10/28 06:45:38 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/files/[0m
+2025/10/28 06:49:48 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/[0m
+2025/10/28 06:49:48 [31m[AuthRequired] ❌ Tidak ada Authorization header di path: /api/mg/files/[0m
+2025/10/28 06:49:54 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/[0m
+2025/10/28 06:49:54 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/files/[0m
+2025/10/28 06:50:14 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/upload[0m
+2025/10/28 06:50:14 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/files/upload[0m
+2025/10/28 06:50:40 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/upload[0m
+2025/10/28 06:50:40 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/files/upload[0m
+2025/10/28 06:50:48 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/users/[0m
+2025/10/28 06:50:48 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/users/[0m
+2025/10/28 06:52:25 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/upload[0m
+2025/10/28 06:52:25 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/files/upload[0m
+2025/10/28 07:01:16 File logger berhasil diinisialisasi.
+2025/10/28 07:01:16 Database connection established
+2025/10/28 07:01:16 Berhasil tersambung ke MongoDB!
+2025/10/28 07:01:21 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/[0m
+2025/10/28 07:01:21 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: user1 | Role:  | Path: /api/mg/files/[0m
+2025/10/28 07:01:39 [34m[AuthRequired] Middleware aktif untuk path: /api/mg/files/upload[0m
+2025/10/28 07:01:39 [32m[AuthRequired] ✅ Token valid. UserID: 0 | Username: admin | Role:  | Path: /api/mg/files/upload[0m
+2025/10/28 07:36:45 File logger berhasil diinisialisasi.
+2025/10/28 07:36:45 Database connection established
+2025/10/28 07:36:45 Berhasil tersambung ke MongoDB!
+2025/10/28 07:40:20 File logger berhasil diinisialisasi.
+2025/10/28 07:40:20 Database connection established
+2025/10/28 07:40:20 Berhasil tersambung ke MongoDB!
+2025/10/28 07:40:22 [DEBUG-AuthMongo] Claims Diterima: UserID='', Username='admin', Role=''
+2025/10/28 07:40:22 [DEBUG-AuthMongo] Validasi Gagal: UserID atau Role kosong!
+2025/10/28 07:44:07 File logger berhasil diinisialisasi.
+2025/10/28 07:44:07 Database connection established
+2025/10/28 07:44:07 Berhasil tersambung ke MongoDB!
+2025/10/28 07:44:21 [DEBUG-AuthMongo] Claims Diterima: UserID='', Username='admin', Role=''
+2025/10/28 07:44:21 [DEBUG-AuthMongo] Validasi Gagal: UserID atau Role kosong!
+2025/10/28 07:51:53 File logger berhasil diinisialisasi.
+2025/10/28 07:51:53 Database connection established
+2025/10/28 07:51:53 Berhasil tersambung ke MongoDB!
+2025/10/28 07:52:09 [DEBUG-JWT-ValidateMongo] Claims Parsed: UserID='', Username='admin', Role=''
+2025/10/28 07:52:09 [DEBUG-AuthMongo] Claims Diterima: UserID='', Username='admin', Role=''
+2025/10/28 07:52:09 [DEBUG-AuthMongo] Validasi Gagal: UserID atau Role kosong!
+2025/10/28 07:56:12 File logger berhasil diinisialisasi.
+2025/10/28 07:56:12 Database connection established
+2025/10/28 07:56:12 Berhasil tersambung ke MongoDB!
+2025/10/28 07:56:29 [DEBUG-JWT-ValidateMongo] Raw MapClaims: map[exp:1.761699377e+09 userID:68ff559733497822a45ed183 username:admin]
+2025/10/28 07:56:29 [DEBUG-JWT-ValidateMongo] Claims Hasil Konversi Manual: UserID='', Username='admin', Role=''
+2025/10/28 07:56:29 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing map
+2025/10/28 08:03:45 File logger berhasil diinisialisasi.
+2025/10/28 08:03:45 Database connection established
+2025/10/28 08:03:45 Berhasil tersambung ke MongoDB!
+2025/10/28 08:03:59 [DEBUG-JWT-ValidateMongo] Raw MapClaims: map[exp:1.761699377e+09 userID:68ff559733497822a45ed183 username:admin]
+2025/10/28 08:03:59 [DEBUG-JWT-ValidateMongo] Claims Hasil Konversi Manual: UserID='68ff559733497822a45ed183', Username='admin', Role=''
+2025/10/28 08:03:59 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing map
+2025/10/28 08:06:15 [DEBUG-JWT-ValidateMongo] Raw MapClaims: map[exp:1.761699964e+09 userID:68ff559733497822a45ed183 username:admin]
+2025/10/28 08:06:15 [DEBUG-JWT-ValidateMongo] Claims Hasil Konversi Manual: UserID='68ff559733497822a45ed183', Username='admin', Role=''
+2025/10/28 08:06:15 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing map
+2025/10/28 08:11:01 File logger berhasil diinisialisasi.
+2025/10/28 08:11:01 Database connection established
+2025/10/28 08:11:01 Berhasil tersambung ke MongoDB!
+2025/10/28 08:11:17 [DEBUG-JWT-ValidateMongo] Raw MapClaims: map[exp:1.761700268e+09 userID:68ff559733497822a45ed183 username:admin]
+2025/10/28 08:11:17 [DEBUG-JWT-ValidateMongo] Claims Hasil Konversi Manual: UserID='68ff559733497822a45ed183', Username='admin', Role=''
+2025/10/28 08:11:17 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing map
+2025/10/28 08:19:04 File logger berhasil diinisialisasi.
+2025/10/28 08:19:04 Database connection established
+2025/10/28 08:19:04 Berhasil tersambung ke MongoDB!
+2025/10/28 08:19:39 [DEBUG-JWT-ValidateMongo] Raw MapClaims: map[exp:1.761700761e+09 userID:68ff559733497822a45ed183 username:admin]
+2025/10/28 08:19:39 [DEBUG-JWT-ValidateMongo] Claims Hasil Konversi Manual: UserID='68ff559733497822a45ed183', Username='admin', Role=''
+2025/10/28 08:19:39 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing map
+2025/10/28 08:20:20 File logger berhasil diinisialisasi.
+2025/10/28 08:20:20 Database connection established
+2025/10/28 08:20:20 Berhasil tersambung ke MongoDB!
+2025/10/28 08:20:49 [DEBUG-JWT-ValidateMongo] Raw MapClaims: map[exp:1.761700824e+09 userID:68ff559733497822a45ed183 username:admin]
+2025/10/28 08:20:49 [DEBUG-JWT-ValidateMongo] Claims Hasil Konversi Manual: UserID='68ff559733497822a45ed183', Username='admin', Role=''
+2025/10/28 08:20:49 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing map
+2025/10/28 08:32:33 File logger berhasil diinisialisasi.
+2025/10/28 08:32:33 Database connection established
+2025/10/28 08:32:33 Berhasil tersambung ke MongoDB!
+2025/10/28 08:34:41 File logger berhasil diinisialisasi.
+2025/10/28 08:34:41 Database connection established
+2025/10/28 08:34:41 Berhasil tersambung ke MongoDB!
+2025/10/28 08:36:30 File logger berhasil diinisialisasi.
+2025/10/28 08:36:30 Database connection established
+2025/10/28 08:36:30 Berhasil tersambung ke MongoDB!
+2025/10/28 08:36:47 [DEBUG-JWT-ValidateMongo] Raw MapClaims: map[exp:1.761701793e+09 userID:68ff559733497822a45ed183 username:admin]
+2025/10/28 08:36:47 [DEBUG-JWT-ValidateMongo] Claims Hasil Konversi Manual: UserID='68ff559733497822a45ed183', Username='admin', Role=''
+2025/10/28 08:36:47 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing map
+2025/10/28 08:44:40 File logger berhasil diinisialisasi.
+2025/10/28 08:44:40 Database connection established
+2025/10/28 08:44:40 Berhasil tersambung ke MongoDB!
+2025/10/28 08:44:57 [DEBUG-JWT-ValidateMongo-DirectParse] Claims Parsed: UserID='', Username='admin', Role=''
+2025/10/28 08:44:57 [DEBUG-JWT-ValidateMongo-DirectParse] Validasi Gagal: UserID atau Role kosong!
+2025/10/28 08:44:57 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing
+2025/10/28 09:18:47 File logger berhasil diinisialisasi.
+2025/10/28 09:18:47 Database connection established
+2025/10/28 09:18:47 Berhasil tersambung ke MongoDB!
+2025/10/28 09:19:06 [DEBUG-JWT-ValidateMongo-DirectParse] Claims Parsed: UserID='', Username='admin', Role=''
+2025/10/28 09:19:06 [DEBUG-JWT-ValidateMongo-DirectParse] Validasi Gagal: UserID atau Role kosong!
+2025/10/28 09:19:06 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing
+2025/10/28 09:19:18 [DEBUG-JWT-ValidateMongo-DirectParse] Claims Parsed: UserID='', Username='admin', Role=''
+2025/10/28 09:19:18 [DEBUG-JWT-ValidateMongo-DirectParse] Validasi Gagal: UserID atau Role kosong!
+2025/10/28 09:19:18 [DEBUG-AuthMongo] Error Validasi Token: UserID atau Role kosong setelah parsing
+2025/10/28 09:44:03 File logger berhasil diinisialisasi.
+2025/10/28 09:44:03 Database connection established
+2025/10/28 09:44:03 Berhasil tersambung ke MongoDB!
+2025/10/28 09:44:49 [DEBUG-JWT-ValidateMongo-DirectParse] Claims Parsed: UserID='', Username='admin', Role=''
+2025/10/28 09:44:49 [DEBUG-JWT-ValidateMongo-DirectParse] Validasi Gagal: UserID atau Role kosong!
+2025/10/28 09:53:19 File logger berhasil diinisialisasi.
+2025/10/28 09:53:19 Database connection established
+2025/10/28 09:53:19 Berhasil tersambung ke MongoDB!
+2025/10/28 09:53:34 [DEBUG-JWT-ValidateMongo] Parsed: UserID='', Username='admin', Role=''
+2025/10/28 09:53:34 [DEBUG-JWT-ValidateMongo] Klaim kosong: UserID='', Role=''
+2025/10/28 09:53:34 [DEBUG-AuthMongo] Error Validasi Token: klaim token tidak lengkap
+2025/10/28 09:57:05 File logger berhasil diinisialisasi.
+2025/10/28 09:57:05 Database connection established
+2025/10/28 09:57:05 Berhasil tersambung ke MongoDB!
+2025/10/28 09:57:14 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed183, Username=admin, Role=admin
+2025/10/28 09:57:27 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 09:57:27 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:00:15 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:00:15 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:44:51 File logger berhasil diinisialisasi.
+2025/10/28 10:44:51 Database connection established
+2025/10/28 10:44:51 Berhasil tersambung ke MongoDB!
+2025/10/28 10:45:02 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:45:02 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:45:19 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:45:19 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:45:29 [DEBUG-JWT-ValidateMongo] Parsed: UserID='', Username='admin', Role=''
+2025/10/28 10:45:29 [DEBUG-JWT-ValidateMongo] Klaim kosong: UserID='', Role=''
+2025/10/28 10:45:29 [DEBUG-AuthMongo] Error Validasi Token: klaim token tidak lengkap
+2025/10/28 10:45:39 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed183, Username=admin, Role=admin
+2025/10/28 10:45:48 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:45:48 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:45:53 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:45:53 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:47:09 File logger berhasil diinisialisasi.
+2025/10/28 10:47:09 Database connection established
+2025/10/28 10:47:09 Berhasil tersambung ke MongoDB!
+2025/10/28 10:47:13 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:47:13 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:47:16 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:47:16 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:48:05 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 10:48:05 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:10 File logger berhasil diinisialisasi.
+2025/10/28 11:00:10 Database connection established
+2025/10/28 11:00:10 Berhasil tersambung ke MongoDB!
+2025/10/28 11:00:15 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:15 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:18 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:18 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:37 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:37 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:41 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:41 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:41 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed183, role: admin, ownerID: 68ff559733497822a45ed184
+2025/10/28 11:00:41 [DEBUG-UploadFile] file saved. ID: 69003fe92797df7c7330b734, OwnerID: 68ff559733497822a45ed184
+2025/10/28 11:00:49 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:00:49 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:02:08 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:02:08 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:14 File logger berhasil diinisialisasi.
+2025/10/28 11:13:14 Database connection established
+2025/10/28 11:13:14 Berhasil tersambung ke MongoDB!
+2025/10/28 11:13:20 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:20 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:24 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:24 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:36 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:36 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:36 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed183, role: admin, ownerID: 68ff559733497822a45ed184
+2025/10/28 11:13:36 [DEBUG-UploadFile] file saved. ID: 690042f016cf8d9cbae093b0, OwnerID: 68ff559733497822a45ed184
+2025/10/28 11:13:40 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:13:40 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 11:14:38 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed184, Username=user1, Role=user
+2025/10/28 11:15:01 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 11:15:01 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 11:15:13 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 11:15:13 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 11:15:13 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed184, role: user, ownerID: 68ff559733497822a45ed184
+2025/10/28 11:15:13 [DEBUG-UploadFile] file saved. ID: 6900435116cf8d9cbae093b1, OwnerID: 68ff559733497822a45ed184
+2025/10/28 20:33:13 File logger berhasil diinisialisasi.
+2025/10/28 20:33:13 Database connection established
+2025/10/28 20:33:13 Berhasil tersambung ke MongoDB!
+2025/10/28 20:33:29 File logger berhasil diinisialisasi.
+2025/10/28 20:33:29 Database connection established
+2025/10/28 20:33:29 Berhasil tersambung ke MongoDB!
+2025/10/28 20:35:14 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:35:14 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:35:18 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:35:18 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:35:54 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 20:35:54 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 20:36:19 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed184, Username=user1, Role=user
+2025/10/28 20:36:24 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed185, Username=user2, Role=user
+2025/10/28 20:37:15 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed185', Username='user2', Role='user'
+2025/10/28 20:37:15 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed185', Username='user2', Role='user'
+2025/10/28 20:37:15 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed185, role: user, ownerID: 68ff559733497822a45ed185
+2025/10/28 20:37:15 [DEBUG-UploadFile] file saved. ID: 6900c70b5861064331f1173c, OwnerID: 68ff559733497822a45ed185
+2025/10/28 20:43:12 File logger berhasil diinisialisasi.
+2025/10/28 20:43:12 Database connection established
+2025/10/28 20:43:12 Berhasil tersambung ke MongoDB!
+2025/10/28 20:43:17 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:43:17 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:43:20 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:43:20 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:43:52 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed18b, Username=user8, Role=user
+2025/10/28 20:44:16 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed18b', Username='user8', Role='user'
+2025/10/28 20:44:16 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed18b', Username='user8', Role='user'
+2025/10/28 20:44:35 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed183, Username=admin, Role=admin
+2025/10/28 20:44:53 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:44:53 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:45:18 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:45:18 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:45:18 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed183, role: admin, ownerID: 68ff559733497822a45ed188
+2025/10/28 20:45:18 [DEBUG-UploadFile] file saved. ID: 6900c8eee12a04bfd8a256be, OwnerID: 68ff559733497822a45ed188
+2025/10/28 20:45:42 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed18b', Username='user8', Role='user'
+2025/10/28 20:45:42 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed18b', Username='user8', Role='user'
+2025/10/28 20:45:42 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed18b, role: user, ownerID: 68ff559733497822a45ed18b
+2025/10/28 20:45:42 [DEBUG-UploadFile] file saved. ID: 6900c906e12a04bfd8a256bf, OwnerID: 68ff559733497822a45ed18b
+2025/10/28 20:46:51 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:46:51 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:59:09 File logger berhasil diinisialisasi.
+2025/10/28 20:59:09 Database connection established
+2025/10/28 20:59:09 Berhasil tersambung ke MongoDB!
+2025/10/28 20:59:37 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:59:37 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:59:58 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 20:59:58 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:02:24 File logger berhasil diinisialisasi.
+2025/10/28 21:02:24 Database connection established
+2025/10/28 21:02:24 Berhasil tersambung ke MongoDB!
+2025/10/28 21:03:36 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:03:36 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:03:59 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:03:59 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:04:43 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed184, Username=user1, Role=user
+2025/10/28 21:05:23 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:05:23 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:05:37 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:05:37 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:05:52 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:05:52 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:11:23 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:11:23 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:11:51 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed183, Username=admin, Role=admin
+2025/10/28 21:12:13 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:12:13 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:18:22 File logger berhasil diinisialisasi.
+2025/10/28 21:18:22 Database connection established
+2025/10/28 21:18:22 Berhasil tersambung ke MongoDB!
+2025/10/28 21:18:26 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:18:26 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:18:31 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:18:31 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:19:12 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:19:12 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:19:25 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:19:25 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 21:19:32 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:19:32 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:20:54 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed188, Username=user5, Role=user
+2025/10/28 21:21:54 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:21:54 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:21:54 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed188, role: user, ownerID: 68ff559733497822a45ed188
+2025/10/28 21:22:16 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:22:16 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:22:16 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed188, role: user, ownerID: 68ff559733497822a45ed188
+2025/10/28 21:22:29 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:22:29 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:22:29 [DEBUG-UploadFile] loggedInUserID: 68ff559733497822a45ed188, role: user, ownerID: 68ff559733497822a45ed188
+2025/10/28 21:22:29 [DEBUG-UploadFile] file saved. ID: 6900d1a5dce53ce4e6a4319e, OwnerID: 68ff559733497822a45ed188
+2025/10/28 21:24:01 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:24:01 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 21:24:07 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed183, Username=admin, Role=admin
+2025/10/28 21:24:17 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 21:24:17 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:27:09 File logger berhasil diinisialisasi.
+2025/10/28 22:27:09 Database connection established
+2025/10/28 22:27:09 Berhasil tersambung ke MongoDB!
+2025/10/28 22:27:14 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed183, Username=admin, Role=admin
+2025/10/28 22:27:24 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:27:24 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:27:26 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:27:26 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:27:30 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:27:30 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:27:31 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:27:31 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:28:37 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:28:37 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:29:11 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:29:11 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:29:11 [DEBUG-UploadFile] file saved. ID: 6900e14727ff5ce9534c39e6, OwnerID: 68ff559733497822a45ed184
+2025/10/28 22:30:54 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:30:54 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:30:54 [DEBUG-UploadFile] file saved. ID: 6900e1ae27ff5ce9534c39e7, OwnerID: 68ff559733497822a45ed185
+2025/10/28 22:33:01 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed188, Username=user5, Role=user
+2025/10/28 22:33:15 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 22:33:15 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 22:33:15 [DEBUG-UploadFile] file saved. ID: 6900e23b27ff5ce9534c39e8, OwnerID: 68ff559733497822a45ed188
+2025/10/28 22:34:16 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 22:34:16 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed188', Username='user5', Role='user'
+2025/10/28 22:34:16 [DEBUG-UploadFile] file saved. ID: 6900e27827ff5ce9534c39e9, OwnerID: 68ff559733497822a45ed188
+2025/10/28 22:36:28 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:36:28 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:36:44 [DEBUG-JWT-ValidateMongo] Token gagal di-parse: token is malformed: token contains an invalid number of segments
+2025/10/28 22:36:44 [DEBUG-AuthMongo] Error Validasi Token: token is malformed: token contains an invalid number of segments
+2025/10/28 22:36:55 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:36:55 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:38:16 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:38:16 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:38:22 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:38:22 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:39:14 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:39:14 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:39:46 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:39:46 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:42:15 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed183, Username=admin, Role=admin
+2025/10/28 22:42:27 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:42:27 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:44:16 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:44:16 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:45:17 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:45:17 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed183', Username='admin', Role='admin'
+2025/10/28 22:45:47 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed184, Username=user1, Role=user
+2025/10/28 22:46:14 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed184, Username=user1, Role=user
+2025/10/28 22:46:38 [DEBUG-GenerateMongoToken] Token dibuat untuk UserID=68ff559733497822a45ed184, Username=user1, Role=user
+2025/10/28 22:46:54 [DEBUG-JWT-ValidateMongo] Parsed: UserID='68ff559733497822a45ed184', Username='user1', Role='user'
+2025/10/28 22:46:54 [DEBUG-AuthMongo] Claims Diterima: UserID='68ff559733497822a45ed184', Username='user1', Role='user'

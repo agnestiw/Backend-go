@@ -1,12 +1,14 @@
-package model
+package mongo
 
 import (
-	"github.com/golang-jwt/jwt/v5"
 	"time"
+
+	"github.com/golang-jwt/jwt/v5"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type User struct {
-	ID        int        `json:"id"`
+type UserMongo struct {
+	ID        primitive.ObjectID `json:"id" bson:"_id"`
 	Username  string     `json:"username"`
 	Email     string     `json:"email"`
 	Role      string     `json:"role"`
@@ -14,18 +16,14 @@ type User struct {
 	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 }
 
-type LoginRequest struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
-}
 
 type LoginResponse struct {
-	User  User   `json:"user"`
-	Token string `json:"token"`
+	User  interface{} `json:"user"`
+	Token string      `json:"token"`
 }
 
 type JWTClaims struct {
-	UserID   int    `json:"user_id"`
+	UserID   string `json:"user_id"`
 	Username string `json:"username"`
 	Role     string `json:"role"`
 	jwt.RegisteredClaims

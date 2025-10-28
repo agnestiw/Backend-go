@@ -14,6 +14,7 @@ func getJWTSecret() []byte {
 	return []byte(strings.TrimSpace(os.Getenv("JWT_SECRET_KEY")))
 }
 
+// untuk PostgreSQL
 func GenerateToken(user model.User) (string, error) {
 	secret := getJWTSecret()
 	fmt.Printf("SECRET in GenerateToken: %q\n", secret)
@@ -30,6 +31,7 @@ func GenerateToken(user model.User) (string, error) {
 	return token.SignedString(secret)
 }
 
+// untuk PostgreSQL
 func ValidateToken(tokenString string) (*model.JWTClaims, error) {
 	token, err := jwt.ParseWithClaims(tokenString, &model.JWTClaims{},
 		func(token *jwt.Token) (interface{}, error) {
@@ -43,3 +45,5 @@ func ValidateToken(tokenString string) (*model.JWTClaims, error) {
 	}
 	return nil, jwt.ErrInvalidKey
 }
+
+
