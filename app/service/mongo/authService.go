@@ -16,6 +16,17 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+// LoginMongo godoc
+// @Summary Login user
+// @Description Login untuk mendapatkan JWT token
+// @Tags Auth
+// @Accept json
+// @Produce json
+// @Param request body model.LoginRequest true "Data login"
+// @Success 200 {object} mongoModel.LoginResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 401 {object} map[string]interface{}
+// @Router /api/mg/login [post]
 func LoginMongo(c *fiber.Ctx) error {
 	var req model.LoginRequest
 	if err := c.BodyParser(&req); err != nil {

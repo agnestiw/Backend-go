@@ -223,3 +223,40 @@ func HardDeletePekerjaan(pekerjaanID, userID, role string) error {
 	}
 	return nil
 }
+
+func GetTrashPekerjaan(id, role string) ([]model.Pekerjaan, error) {
+	filter := bson.M{"is_delete": true}
+
+	// Jika ID dikirim lewat params, ambil berdasarkan _id
+	if id != "" {
+		objID, err := primitive.ObjectIDFromHex(id)
+		if err != nil {
+			return nil, fmt.Errorf("invalid ID format: %v", err)
+		}
+		filter["_id"] = objID
+	}
+
+	// Jika role adalah "user", tolak akses karena trash hanya untuk admin
+	if role == "user" {
+		return nil, fmt.Errorf("forbidden: user cannot access trash")
+	}
+
+	fmt.Println("DEBUG FILTER:", filter) // untuk bantu debug
+
+	cursor, err := pekerjaanColl.Find(context.TODO(), filter)
+	if err != nil {
+		return nil, err
+	}
+	defer cursor.Close(context.TODO())
+
+	var pekerjaanList []model.Pekerjaan
+	if err := cursor.All(context.TODO(), &pekerjaanList); err != nil {
+		return nil, err
+	}
+
+	if len(pekerjaanList) == 0 {
+		return nil, fmt.Errorf("Pekerjaan not found")
+	}
+
+	return pekerjaanList, nil
+}

@@ -33,6 +33,21 @@ func toFileResponse(file *mongoModel.File, ownerID primitive.ObjectID) *mongoMod
 	}
 }
 
+// UploadFile godoc
+// @Summary Upload file baru
+// @Description Mengunggah file (gambar/pdf) ke server dan simpan metadata ke MongoDB.
+// @Tags Files
+// @Accept multipart/form-data
+// @Produce json
+// @Security BearerAuth
+// @Param file formData file true "File yang akan diupload"
+// @Param target_user_id formData string false "Hanya digunakan oleh admin untuk menentukan pemilik file"
+// @Success 201 {object} map[string]interface{} "File uploaded successfully"
+// @Failure 400 {object} map[string]interface{} "Bad Request"
+// @Failure 401 {object} map[string]interface{} "Unauthorized"
+// @Failure 403 {object} map[string]interface{} "Forbidden"
+// @Failure 500 {object} map[string]interface{} "Internal Server Error"
+// @Router /api/mg/files/upload [post]
 func UploadFile(c *fiber.Ctx) error {
 	fileHeader, err := c.FormFile("file")
 	if err != nil {
@@ -156,7 +171,16 @@ func UploadFile(c *fiber.Ctx) error {
 	})
 }
 
-
+// GetAllFiles godoc
+// @Summary Ambil semua file
+// @Description Mengambil daftar semua file yang tersimpan di database.
+// @Tags Files
+// @Produce json
+// @Security BearerAuth
+// @Success 200 {object} map[string]interface{} "Files retrieved successfully"
+// @Failure 401 {object} map[string]interface{} "Unauthorized"
+// @Failure 500 {object} map[string]interface{} "Internal Server Error"
+// @Router /api/mg/files [get]
 func GetAllFiles(c *fiber.Ctx) error {
 	files, err := mongoRepo.FindAllFiles()
 	if err != nil {
@@ -175,6 +199,18 @@ func GetAllFiles(c *fiber.Ctx) error {
 	})
 }
 
+// GetFileByID godoc
+// @Summary Ambil file berdasarkan ID
+// @Description Mengambil metadata file berdasarkan ID-nya.
+// @Tags Files
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "File ID"
+// @Success 200 {object} map[string]interface{} "File retrieved successfully"
+// @Failure 400 {object} map[string]interface{} "Invalid ID"
+// @Failure 404 {object} map[string]interface{} "File not found"
+// @Failure 500 {object} map[string]interface{} "Database error"
+// @Router /api/mg/files/{id} [get]
 func GetFileByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	file, err := mongoRepo.FindFileByID(id)
@@ -195,7 +231,7 @@ func GetFileByID(c *fiber.Ctx) error {
 	})
 }
 
-func GetFileContentByID(c *fiber.Ctx) error {
+func GetContentByID(c *fiber.Ctx) error {
 	idHex := c.Params("id")
 	fileID, err := primitive.ObjectIDFromHex(idHex)
 	if err != nil {
@@ -256,7 +292,19 @@ func GetFileContentByID(c *fiber.Ctx) error {
 	return c.SendFile(file.FilePath)
 }
 
-
+// DeleteFile godoc
+// @Summary Hapus file
+// @Description Menghapus file dari server dan metadata dari database (hanya pemilik atau admin).
+// @Tags Files
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "File ID"
+// @Success 200 {object} map[string]interface{} "File deleted successfully"
+// @Failure 401 {object} map[string]interface{} "Unauthorized"
+// @Failure 403 {object} map[string]interface{} "Forbidden"
+// @Failure 404 {object} map[string]interface{} "File not found"
+// @Failure 500 {object} map[string]interface{} "Internal Server Error"
+// @Router /api/mg/files/{id} [delete]
 func DeleteFile(c *fiber.Ctx) error {
 	id := c.Params("id")
 

@@ -11,7 +11,21 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-
+// GetAllPekerjaan godoc
+// @Summary      Mendapatkan semua data pekerjaan
+// @Description  Mengambil daftar pekerjaan dengan pagination, sorting, dan search
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        page     query     int     false  "Halaman"
+// @Param        limit    query     int     false  "Jumlah data per halaman"
+// @Param        sortBy   query     string  false  "Kolom pengurutan (default: created_at)"
+// @Param        order    query     string  false  "Arah pengurutan (asc/desc)"
+// @Param        search   query     string  false  "Kata kunci pencarian"
+// @Success      200 {object} map[string]interface{}
+// @Failure      500 {object} map[string]interface{}
+// @Router       /api/mg/pekerjaan [get]
+// @Security     BearerAuth
 func GetAllPekerjaan(c *fiber.Ctx) error {
 	page, _ := strconv.Atoi(c.Query("page", "1"))
 	limit, _ := strconv.Atoi(c.Query("limit", "10"))
@@ -72,6 +86,17 @@ func GetAllPekerjaan(c *fiber.Ctx) error {
 	})
 }
 
+// GetPekerjaanByID godoc
+// @Summary      Mendapatkan pekerjaan berdasarkan ID
+// @Description  Mengambil satu data pekerjaan berdasarkan ID
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        id   path      string  true  "ID pekerjaan"
+// @Success      200 {object} mongoModel.Pekerjaan
+// @Failure      404 {object} map[string]interface{}
+// @Router       /api/mg/pekerjaan/{id} [get]
+// @Security     BearerAuth
 func GetPekerjaanByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	data, err := mongoRepo.GetPekerjaanByIDRepo(id)
@@ -83,36 +108,18 @@ func GetPekerjaanByID(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(data)
 }
 
-
-func CreatePekerjaan(c *fiber.Ctx) error {
-	var req mongoModel.Pekerjaan
-	if err := c.BodyParser(&req); err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": "Invalid request body",
-		})
-	}
-
-	// Simulate user/alumni ownership
-	// userID := c.Locals("userID")
-	// if uid, ok := userID.(string); ok {
-	// 	if objID, err := primitive.ObjectIDFromHex(uid); err == nil {
-	// 		req.UserID = objID
-	// 	}
-	// }
-
-	req.CreatedAt = time.Now()
-	req.IsDelete = false
-
-	newPekerjaan, err := mongoRepo.CreatePekerjaan(&req)
-	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
-
-	return c.Status(fiber.StatusCreated).JSON(newPekerjaan)
-}
-
+// GetPekerjaanByAlumniID godoc
+// @Summary      Get pekerjaan berdasarkan alumni ID
+// @Description  Mengambil semua data pekerjaan yang dimiliki oleh seorang alumni berdasarkan ID alumni
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        alumni_id   path      string  true  "ID Alumni"
+// @Success      200  {object}  map[string]interface{}  "Daftar pekerjaan berdasarkan alumni"
+// @Failure      404  {object}  map[string]string  "Tidak ada data pekerjaan untuk alumni ini"
+// @Failure      500  {object}  map[string]string  "Terjadi kesalahan server"
+// @Router       /api/mg/pekerjaan/alumni/{alumni_id} [get]
+// @Security     BearerAuth
 func GetPekerjaanByAlumniID(c *fiber.Ctx) error {
 	alumniID := c.Params("alumni_id")
 
@@ -144,7 +151,60 @@ func GetPekerjaanByAlumniID(c *fiber.Ctx) error {
 	})
 }
 
+// CreatePekerjaan godoc
+// @Summary      Membuat data pekerjaan baru
+// @Description  Menambahkan data pekerjaan baru ke dalam database
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        request body mongoModel.Pekerjaan true "Data pekerjaan baru"
+// @Success      201 {object} mongoModel.Pekerjaan
+// @Failure      400 {object} map[string]interface{}
+// @Failure      500 {object} map[string]interface{}
+// @Router       /api/mg/pekerjaan [post]
+// @Security     BearerAuth
+func CreatePekerjaan(c *fiber.Ctx) error {
+	var req mongoModel.Pekerjaan
+	if err := c.BodyParser(&req); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Invalid request body",
+		})
+	}
 
+	// Simulate user/alumni ownership
+	// userID := c.Locals("userID")
+	// if uid, ok := userID.(string); ok {
+	// 	if objID, err := primitive.ObjectIDFromHex(uid); err == nil {
+	// 		req.UserID = objID
+	// 	}
+	// }
+
+	req.CreatedAt = time.Now()
+	req.IsDelete = false
+
+	newPekerjaan, err := mongoRepo.CreatePekerjaan(&req)
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	return c.Status(fiber.StatusCreated).JSON(newPekerjaan)
+}
+
+// UpdatePekerjaan godoc
+// @Summary      Memperbarui data pekerjaan
+// @Description  Mengupdate data pekerjaan berdasarkan ID
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        id path string true "ID pekerjaan"
+// @Param        request body mongoModel.UpdatePekerjaanRequest true "Data pekerjaan yang diperbarui"
+// @Success      200 {object} mongoModel.Pekerjaan
+// @Failure      400 {object} map[string]interface{}
+// @Failure      404 {object} map[string]interface{}
+// @Router       /api/mg/pekerjaan/{id} [put]
+// @Security     BearerAuth
 func UpdatePekerjaan(c *fiber.Ctx) error {
 	id := c.Params("id")
 	var req mongoModel.UpdatePekerjaanRequest
@@ -163,7 +223,17 @@ func UpdatePekerjaan(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(data)
 }
 
-
+// SoftDeletePekerjaan godoc
+// @Summary      Soft delete pekerjaan
+// @Description  Menghapus sementara data pekerjaan (tidak benar-benar dihapus)
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        id path string true "ID pekerjaan"
+// @Success      200 {object} map[string]interface{}
+// @Failure      400 {object} map[string]interface{}
+// @Router       /api/mg/pekerjaan/soft-delete/{id} [delete]
+// @Security     BearerAuth
 func SoftDeletePekerjaan(c *fiber.Ctx) error {
 	fmt.Println("DEBUG: Masuk ke SoftDeletePekerjaan handler")
 	id := c.Params("id")
@@ -192,6 +262,17 @@ func SoftDeletePekerjaan(c *fiber.Ctx) error {
 	})
 }
 
+// RestorePekerjaan godoc
+// @Summary      Mengembalikan data pekerjaan yang terhapus
+// @Description  Restore data pekerjaan yang dihapus secara soft delete
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        id path string true "ID pekerjaan"
+// @Success      200 {object} map[string]interface{}
+// @Failure      400 {object} map[string]interface{}
+// @Router       /api/mg/pekerjaan/restore/{id} [post]
+// @Security     BearerAuth
 func RestorePekerjaan(c *fiber.Ctx) error {
 	id := c.Params("id")
 	userID := c.Locals("userID").(string)
@@ -207,7 +288,17 @@ func RestorePekerjaan(c *fiber.Ctx) error {
 	})
 }
 
-// ✅ Hard delete
+// HardDeletePekerjaan godoc
+// @Summary      Menghapus permanen data pekerjaan
+// @Description  Hard delete data pekerjaan dari database
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        id path string true "ID pekerjaan"
+// @Success      200 {object} map[string]interface{}
+// @Failure      400 {object} map[string]interface{}
+// @Router       /api/mg/pekerjaan/hard-delete/{id} [delete]
+// @Security     BearerAuth
 func HardDeletePekerjaan(c *fiber.Ctx) error {
 	id := c.Params("id")
 	userID := c.Locals("userID").(string)
@@ -223,3 +314,31 @@ func HardDeletePekerjaan(c *fiber.Ctx) error {
 	})
 }
 
+// GetTrashPekerjaanByID godoc
+// @Summary      Mendapatkan pekerjaan yang dihapus berdasarkan ID
+// @Description  Menampilkan data pekerjaan yang sudah dihapus (soft delete) berdasarkan ID tertentu
+// @Tags         Pekerjaan
+// @Accept       json
+// @Produce      json
+// @Param        id   path      string  true  "ID pekerjaan"
+// @Success      200  {object}  map[string]interface{}  "Data pekerjaan yang sudah dihapus berhasil diambil"
+// @Failure      400  {object}  map[string]interface{}  "Format ID tidak valid"
+// @Failure      404  {object}  map[string]interface{}  "Data pekerjaan tidak ditemukan di trash"
+// @Failure      500  {object}  map[string]interface{}  "Terjadi kesalahan pada server"
+// @Security     BearerAuth
+// @Router       /api/mg/pekerjaan/trash/{id} [get]
+func GetTrashPekerjaan(c *fiber.Ctx) error {
+	id := c.Params("id")
+	role, _ := c.Locals("role").(string)
+
+	pekerjaanList, err := mongoRepo.GetTrashPekerjaan(id, role)
+	if err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"data": pekerjaanList,
+	})
+}

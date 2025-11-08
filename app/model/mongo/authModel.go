@@ -16,9 +16,9 @@ type UserMongo struct {
 	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 }
 
-
+// @Success 200 {object} mongoModel.LoginResponse
 type LoginResponse struct {
-	User  interface{} `json:"user"`
+	User  UserMongo `json:"user"`
 	Token string      `json:"token"`
 }
 
