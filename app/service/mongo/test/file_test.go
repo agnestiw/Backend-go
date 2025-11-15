@@ -15,11 +15,10 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-// Variabel global untuk ID File yang baru di-upload
 var (
 	testCreatedFileID   string
 	testCreatedFileName = "test_image.png"
-	testFileContent     = "ini-adalah-konten-gambar-dummy" // Konten dummy, tidak harus gambar asli
+	testFileContent     = "ini-adalah-konten-gambar-dummy"
 	testFileType        = "image/png"
 )
 
@@ -28,32 +27,25 @@ func TestFile_1_Upload_Endpoint(t *testing.T) {
 
 	// Skenario 1: Berhasil Meng-upload File (sebagai Admin)
 	t.Run("Positive - Upload File Successfully (as Admin)", func(t *testing.T) {
-		// Buat body request multipart
 		body := new(bytes.Buffer)
 		writer := multipart.NewWriter(body)
 
-		// 1. Buat form field "file" dengan header Content-Type manual
-		// Ini adalah perbaikan untuk lolos validasi allowedTypes di service
 		h := make(textproto.MIMEHeader)
 		h.Set("Content-Disposition",
 			fmt.Sprintf(`form-data; name="file"; filename="%s"`, testCreatedFileName))
-		h.Set("Content-Type", testFileType) // <-- Mengatur Content-Type ke "image/png"
+		h.Set("Content-Type", testFileType)
 
 		part, err := writer.CreatePart(h)
 		assert.NoError(t, err)
 
-		// Tulis konten file dummy
 		_, err = part.Write([]byte(testFileContent))
 		assert.NoError(t, err)
 
-		// 2. (WAJIB) Tambahkan "target_user_id" karena kita admin
-		// Kita set admin (testSeededUser) sebagai pemilik file
 		err = writer.WriteField("target_user_id", testSeededUser.ID.Hex())
 		assert.NoError(t, err)
 
-		writer.Close() // Tutup writer untuk finalisasi body
+		writer.Close()
 
-		// Buat request
 		req := httptest.NewRequest("POST", "/api/mg/files/upload", body)
 		req.Header.Set("Content-Type", writer.FormDataContentType())
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
@@ -61,24 +53,21 @@ func TestFile_1_Upload_Endpoint(t *testing.T) {
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
 
-		// Cek respons dari handler UploadFile
 		var respBody map[string]interface{}
 		json.NewDecoder(resp.Body).Decode(&respBody)
 
 		assert.Equal(t, fiber.StatusCreated, resp.StatusCode, "Status code seharusnya 201 Created")
 		assert.Equal(t, true, respBody["success"])
 
-		// Cek data file yg dikembalikan
 		data, ok := respBody["data"].(map[string]interface{})
 		assert.True(t, ok, "Key 'data' seharusnya ada")
 		assert.Equal(t, testCreatedFileName, data["original_name"], "OriginalName harus sama")
 		assert.Equal(t, testSeededUser.ID.Hex(), data["owner_id"], "OwnerID harus sama dengan target_user_id")
 
-		// Simpan ID untuk tes berikutnya
 		id, ok := data["id"].(string)
 		assert.True(t, ok)
 		assert.NotEmpty(t, id, "ID File yang baru dibuat tidak boleh kosong")
-		testCreatedFileID = id // Simpan ke variabel global
+		testCreatedFileID = id 
 	})
 
 	// Skenario 2: Gagal karena Tidak Ada Token (Unauthorized)
@@ -108,8 +97,7 @@ func TestFile_1_Upload_Endpoint(t *testing.T) {
 
 		req := httptest.NewRequest("POST", "/api/mg/files/upload", body)
 		req.Header.Set("Content-Type", writer.FormDataContentType())
-		req.Header.Set("Authorization", "Bearer "+testAuthToken) // Token kita adalah admin
-		// Tidak ada writer.WriteField("target_user_id", ...)
+		req.Header.Set("Authorization", "Bearer "+testAuthToken) 
 
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
@@ -142,7 +130,7 @@ func TestFile_2_GetMetadataByID_Endpoint(t *testing.T) {
 
 	// Skenario 2: Gagal karena ID Tidak Ditemukan (Not Found)
 	t.Run("Negative - Not Found ID", func(t *testing.T) {
-		nonExistentID := primitive.NewObjectID().Hex() // ID acak
+		nonExistentID := primitive.NewObjectID().Hex()
 		req := httptest.NewRequest("GET", "/api/mg/files/"+nonExistentID, nil)
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 
@@ -157,7 +145,6 @@ func TestFile_2_GetMetadataByID_Endpoint(t *testing.T) {
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
-		// Repo Anda akan gagal di helper.ToObjectID(), dan service akan return 500
 		assert.Equal(t, fiber.StatusInternalServerError, resp.StatusCode)
 	})
 }
@@ -175,13 +162,9 @@ func TestFile_3_GetContentByID_Endpoint(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, fiber.StatusOK, resp.StatusCode)
 
-		// Baca body (konten file)
 		respBodyBytes, err := io.ReadAll(resp.Body)
 		assert.NoError(t, err)
 
-		// Verifikasi konten
-		// Set Content-Type di handler GetContentByID Anda agar ini lolos
-		// c.Set("Content-Type", file.FileType)
 		assert.Equal(t, testFileContent, string(respBodyBytes), "Konten file tidak sesuai")
 	})
 
@@ -234,12 +217,6 @@ func TestFile_5_DeleteFile_Endpoint(t *testing.T) {
 		json.NewDecoder(resp.Body).Decode(&respBody)
 		assert.Equal(t, true, respBody["success"])
 		assert.Equal(t, "File deleted successfully", respBody["message"])
-
-		// Verifikasi juga bahwa file fisik telah dihapus
-		// (Asumsi 'uploadPath' dari service)
-		// fileLocation := filepath.Join("./uploads", "namafile-yg-disimpan-di-db")
-		// _, err = os.Stat(fileLocation)
-		// assert.True(t, os.IsNotExist(err), "File fisik seharusnya sudah terhapus")
 	})
 
 	// Skenario 2: Verifikasi Get Metadata Gagal Setelah di Hard-Delete
@@ -266,7 +243,6 @@ func TestFile_5_DeleteFile_Endpoint(t *testing.T) {
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
-		// Handler Anda akan gagal di FindFileByID (ErrNoDocuments)
 		assert.Equal(t, fiber.StatusNotFound, resp.StatusCode, "Seharusnya 404 Not Found saat menghapus data yg sudah dihapus")
 	})
 }

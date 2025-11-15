@@ -5,10 +5,10 @@ import (
 	"context"
 	"encoding/json"
 	"log"
-	"latihan2/middleware" // <-- Impor middleware
+	"latihan2/middleware"
 	"latihan2/app/model"
 	mongoModel "latihan2/app/model/mongo"
-	mongoService "latihan2/app/service/mongo" // Impor service mongo
+	mongoService "latihan2/app/service/mongo" 
 	"latihan2/database"
 	"net/http/httptest"
 	"os"
@@ -23,53 +23,42 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// Variabel global untuk state test suite
 var (
 	testApp        *fiber.App
-	testAuthToken  string // Token JWT untuk autentikasi
+	testAuthToken  string
 	testSeededUser mongoModel.User
 
-	// Variabel untuk tes Alumni
-	testCreatedAlumniID string // ID dari alumni yang baru dibuat (oleh tes alumni)
-	testAlumniNIM       = "TEST-NIM-001" // NIM untuk tes create alumni
+	testCreatedAlumniID string
+	testAlumniNIM       = "TEST-NIM-001"
 
-	// Variabel untuk tes Pekerjaan (diisi oleh TestMain)
-	testSeededAlumniID     string // <-- TAMBAHAN: Variabel dari pekerjaan_test.go akan diisi di sini
-	testSeededAlumniForPekerjaan mongoModel.Alumni // <-- TAMBAHAN
-	testAlumniNIMForPekerjaan = "TEST-NIM-FOR-JOB-002" // <-- TAMBAHAN
+	testSeededAlumniID     string 
+	testSeededAlumniForPekerjaan mongoModel.Alumni
+	testAlumniNIMForPekerjaan = "TEST-NIM-FOR-JOB-002"
 
-	// Variabel login
 	testSeededUsername = "alumni_tester_mongo"
 	testSeededPassword = "alumni_pass123"
 )
 
-// TestMain akan dieksekusi sekali sebelum & sesudah semua tes di package ini.
 func TestMain(m *testing.M) {
-	// 1. SETUP
 	err := godotenv.Load("../../../../.env")
 	if err != nil {
 		log.Fatalf("Gagal memuat file .env dari root: %v", err)
 	}
-	os.Setenv("JWT_SECRET_KEY", "16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h") // Pastikan sama
+	os.Setenv("JWT_SECRET_KEY", "16824af3-6b8e-4c3d-9f1e-2c4b5e6f7g8h")
 
-	// Hubungkan ke DB
 	database.InitMongoDB()
 	if database.MongoDB == nil {
 		log.Fatal("Koneksi MongoDB nil setelah InitMongoDB")
 	}
 
-	// Siapkan collections
 	collUser := database.MongoDB.Collection("user")
 	collAlumni := database.MongoDB.Collection("alumni")
-	collPekerjaan := database.MongoDB.Collection("pekerjaan") // <-- TAMBAHAN
+	collPekerjaan := database.MongoDB.Collection("pekerjaan")
 
-	// Bersihkan data lama
 	_, _ = collUser.DeleteMany(context.Background(), bson.M{"username": testSeededUsername})
-	// <-- TAMBAHAN: Bersihkan kedua NIM
 	_, _ = collAlumni.DeleteMany(context.Background(), bson.M{"nim": bson.M{"$in": []string{testAlumniNIM, testAlumniNIMForPekerjaan}}})
 
 
-	// 2. SEED USER (untuk mendapatkan token)
 	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte(testSeededPassword), bcrypt.DefaultCost)
 	testSeededUser = mongoModel.User{
 		ID:        primitive.NewObjectID(),
@@ -85,8 +74,6 @@ func TestMain(m *testing.M) {
 		log.Fatalf("Gagal seeding data user tes: %v", err)
 	}
 
-	// 3. SEED ALUMNI (UNTUK KEBUTUHAN TES PEKERJAAN)
-	// <-- TAMBAHAN: Blok ini penting
 	testSeededAlumniForPekerjaan = mongoModel.Alumni{
 		ID:         primitive.NewObjectID(),
 		UserID:     testSeededUser.ID,
@@ -102,21 +89,13 @@ func TestMain(m *testing.M) {
 	if err != nil {
 		log.Fatalf("Gagal seeding data alumni tes: %v", err)
 	}
-	// Ini akan mengisi variabel global yg dibutuhkan oleh pekerjaan_test.go
 	testSeededAlumniID = testSeededAlumniForPekerjaan.ID.Hex() 
-	
-	// Bersihkan pekerjaan yg mungkin nyangkut dari alumni ini
+
 	_, _ = collPekerjaan.DeleteMany(context.Background(), bson.M{"alumni_id": testSeededAlumniForPekerjaan.ID})
 
-
-	// 4. SETUP FIBER APP & ROUTES
 	testApp = fiber.New()
 	api := testApp.Group("/api/mg")
-
-	// Rute Publik (Login)
 	api.Post("/login", mongoService.LoginMongo)
-
-	// Rute Terproteksi (Middleware)
 	protectedm := api.Group("", middleware.AuthRequiredMongo()) 
 
 	// Rute Alumni
@@ -144,7 +123,6 @@ func TestMain(m *testing.M) {
 	filem.Get("/open/:id", mongoService.GetContentByID)
 	filem.Delete("/:id", mongoService.DeleteFile)
 
-	// 5. LOGIN UNTUK MENDAPATKAN TOKEN
 	loginBody := model.LoginRequest{Username: testSeededUsername, Password: testSeededPassword}
 	bodyBytes, _ := json.Marshal(loginBody)
 	req := httptest.NewRequest("POST", "/api/mg/login", bytes.NewBuffer(bodyBytes))
@@ -165,15 +143,10 @@ func TestMain(m *testing.M) {
 	if !ok || testAuthToken == "" {
 		log.Fatal("Gagal mendapatkan token JWT dari respons login")
 	}
-
-	// 6. JALANKAN SEMUA TES
 	exitCode := m.Run()
 
-	// 7. TEARDOWN
-	// Bersihkan data yang dibuat selama tes
 	_, _ = collUser.DeleteMany(context.Background(), bson.M{"username": testSeededUsername})
 	_, _ = collAlumni.DeleteMany(context.Background(), bson.M{"user_id": testSeededUser.ID})
-	// <-- TAMBAHAN: Bersihkan pekerjaan yg dibuat
 	_, _ = collPekerjaan.DeleteMany(context.Background(), bson.M{"alumni_id": testSeededAlumniForPekerjaan.ID})
 	
 	if database.MongoClient != nil {
@@ -182,10 +155,6 @@ func TestMain(m *testing.M) {
 
 	os.Exit(exitCode)
 }
-
-// =========================================================================
-// SEMUA TES ALUMNI DI BAWAH INI TETAP SAMA, TIDAK PERLU DIUBAH
-// =========================================================================
 
 // TestAlumni_1_Create_Endpoint menguji endpoint POST /alumni
 func TestAlumni_1_Create_Endpoint(t *testing.T) {
@@ -305,7 +274,6 @@ func TestAlumni_2_GetByID_Endpoint(t *testing.T) {
 // TestAlumni_3_GetAll_Endpoint menguji GET /alumni
 func TestAlumni_3_GetAll_Endpoint(t *testing.T) {
 	// Skenario 1: Berhasil Mendapatkan Semua Alumni (dengan search)
-	// <-- TAMBAHAN: Ubah query search agar mencari kedua NIM
 	t.Run("Positive - Get All With Search", func(t *testing.T) {
 		req := httptest.NewRequest("GET", "/api/mg/alumni?search=TEST-NIM", nil)
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
@@ -318,7 +286,6 @@ func TestAlumni_3_GetAll_Endpoint(t *testing.T) {
 		json.NewDecoder(resp.Body).Decode(&respBody)
 		meta, ok := respBody["meta"].(map[string]interface{})
 		assert.True(t, ok)
-		// <-- TAMBAHAN: Harusnya total 2 (1 dari seed, 1 dari create)
 		assert.Equal(t, float64(2), meta["total"], "Total data seharusnya 2") 
 		data, ok := respBody["data"].([]interface{})
 		assert.True(t, ok)
@@ -344,7 +311,6 @@ func TestAlumni_3_GetAll_Endpoint(t *testing.T) {
 	// Skenario 3: Gagal karena Tidak Ada Token (Unauthorized)
 	t.Run("Negative - Unauthorized (No Token)", func(t *testing.T) {
 		req := httptest.NewRequest("GET", "/api/mg/alumni", nil)
-		// Tidak ada header Authorization
 
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
@@ -359,8 +325,8 @@ func TestAlumni_4_Update_Endpoint(t *testing.T) {
 	// Skenario 1: Berhasil Update Alumni
 	t.Run("Positive - Update Alumni Successfully", func(t *testing.T) {
 		reqBody := model.UpdateAlumniRequest{
-			Nama:       "Nama Tester Updated", // Data diubah
-			Jurusan:    "Sistem Informasi",   // Data diubah
+			Nama:       "Nama Tester Updated",
+			Jurusan:    "Sistem Informasi",  
 			Angkatan:   2020,
 			TahunLulus: 2024,
 			Email:      "tester-updated@alumni.com",
@@ -402,18 +368,17 @@ func TestAlumni_4_Update_Endpoint(t *testing.T) {
 
 	// Skenario 3: Gagal karena Format ID Salah
 	t.Run("Negative - Invalid ID Format", func(t *testing.T) {
-		// KIRIM JSON KOSONG AGAR LOLOS BodyParser
 		req := httptest.NewRequest("PUT", "/api/mg/alumni/invalid-id", bytes.NewBufferString(`{}`))
-		req.Header.Set("Content-Type", "application/json") // <-- Tambahkan content-type
+		req.Header.Set("Content-Type", "application/json")
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
-		assert.Equal(t, fiber.StatusInternalServerError, resp.StatusCode) // Sesuai implementasi repo
+		assert.Equal(t, fiber.StatusInternalServerError, resp.StatusCode)
 	})
 
 	// Skenario 4: Gagal karena Body Request Tidak Valid
 	t.Run("Negative - Invalid Request Body", func(t *testing.T) {
-		req := httptest.NewRequest("PUT", "/api/mg/alumni/"+testCreatedAlumniID, bytes.NewBufferString(`{"nama":`)) // JSON rusak
+		req := httptest.NewRequest("PUT", "/api/mg/alumni/"+testCreatedAlumniID, bytes.NewBufferString(`{"nama":`))
 		req.Header.Set("Content-Type", "application/json")
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 
@@ -482,7 +447,7 @@ func TestAlumni_5_SoftDelete_Endpoint(t *testing.T) {
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
-		assert.Equal(t, fiber.StatusInternalServerError, resp.StatusCode) // Sesuai implementasi repo
+		assert.Equal(t, fiber.StatusInternalServerError, resp.StatusCode)
 	})
 
 	// Skenario 6: Gagal karena Tidak Ada Token (Unauthorized)

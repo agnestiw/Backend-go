@@ -13,37 +13,31 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-// Variabel global untuk ID Pekerjaan yang baru dibuat
-// (Ini akan diisi oleh TestMain di file alumni_test.go)
 var testCreatedPekerjaanID string
 
 // TestPekerjaan_1_Create_Endpoint menguji POST /pekerjaan
 func TestPekerjaan_1_Create_Endpoint(t *testing.T) {
-	// Pastikan testSeededAlumniID sudah di-seed oleh TestMain
 	assert.NotEmpty(t, testSeededAlumniID, "Seeded Alumni ID tidak boleh kosong")
-	
 	seededAlumniObjectID, _ := primitive.ObjectIDFromHex(testSeededAlumniID)
 
 	// Skenario 1: Berhasil Membuat Pekerjaan
 	t.Run("Positive - Create Pekerjaan Successfully", func(t *testing.T) {
 		reqBody := mongo.Pekerjaan{
-			// ID akan di-generate oleh MongoDB
-			AlumniID:          seededAlumniObjectID, // <-- Link ke alumni yang di-seed
+			AlumniID:          seededAlumniObjectID,
 			NamaPerusahaan:    "PT. Tester Jaya",
 			PosisiJabatan:     "Quality Assurance",
 			BidangIndustri:    "Teknologi",
 			LokasiKerja:       "Jakarta",
 			GajiRange:         "Rp 10jt - 15jt",
-			TanggalMulaiKerja: time.Now().AddDate(-1, 0, 0), // 1 tahun lalu
+			TanggalMulaiKerja: time.Now().AddDate(-1, 0, 0),
 			StatusPekerjaan:   "Full-time",
 			Deskripsi:         "Melakukan pengujian pada aplikasi.",
-			// IsDelete & CreatedAt akan di-handle oleh service/repo
 		}
 		bodyBytes, _ := json.Marshal(reqBody)
 
 		req := httptest.NewRequest("POST", "/api/mg/pekerjaan", bytes.NewBuffer(bodyBytes))
 		req.Header.Set("Content-Type", "application/json")
-		req.Header.Set("Authorization", "Bearer "+testAuthToken) // <-- Token dari TestMain
+		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
@@ -51,16 +45,13 @@ func TestPekerjaan_1_Create_Endpoint(t *testing.T) {
 
 		var respBody map[string]interface{}
 		json.NewDecoder(resp.Body).Decode(&respBody)
-
-		// Handler Anda mengembalikan data pekerjaan yg baru dibuat (bukan di dlm key "data")
 		assert.Equal(t, "PT. Tester Jaya", respBody["nama_perusahaan"])
 		assert.Equal(t, testSeededAlumniID, respBody["alumni_id"], "AlumniID harus sama dengan yg di-seed")
 
-		// Simpan ID untuk tes berikutnya
 		id, ok := respBody["id"].(string)
 		assert.True(t, ok)
 		assert.NotEmpty(t, id, "ID Pekerjaan yang baru dibuat tidak boleh kosong")
-		testCreatedPekerjaanID = id // Simpan ke variabel global
+		testCreatedPekerjaanID = id
 	})
 
 	// Skenario 2: Gagal karena Tidak Ada Token (Unauthorized)
@@ -106,7 +97,7 @@ func TestPekerjaan_2_GetByID_Endpoint(t *testing.T) {
 
 	// Skenario 2: Gagal karena ID Tidak Ditemukan (Not Found)
 	t.Run("Negative - Not Found ID", func(t *testing.T) {
-		nonExistentID := primitive.NewObjectID().Hex() // ID acak
+		nonExistentID := primitive.NewObjectID().Hex()
 		req := httptest.NewRequest("GET", "/api/mg/pekerjaan/"+nonExistentID, nil)
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 
@@ -122,8 +113,6 @@ func TestPekerjaan_2_GetByID_Endpoint(t *testing.T) {
 
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
-		// Error ini terjadi di repo/service Anda, mungkin 500 atau 404
-		// Mari asumsikan 404 seperti implementasi handler Anda
 		assert.Equal(t, fiber.StatusNotFound, resp.StatusCode)
 	})
 }
@@ -199,9 +188,8 @@ func TestPekerjaan_5_Update_Endpoint(t *testing.T) {
 	// Skenario 1: Berhasil Update Pekerjaan
 	t.Run("Positive - Update Pekerjaan Successfully", func(t *testing.T) {
 		reqBody := mongo.UpdatePekerjaanRequest{
-			NamaPerusahaan: "PT. Tester Jaya (Updated)", // Data diubah
-			PosisiJabatan:  "Senior QA",               // Data diubah
-			// Field lain tidak diisi, seharusnya tidak berubah (tergantung implementasi repo)
+			NamaPerusahaan: "PT. Tester Jaya (Updated)",
+			PosisiJabatan:  "Senior QA",
 		}
 		bodyBytes, _ := json.Marshal(reqBody)
 
@@ -232,9 +220,6 @@ func TestPekerjaan_5_Update_Endpoint(t *testing.T) {
 
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
-		// Asumsi repo Anda mengembalikan error jika ID tidak ditemukan,
-		// dan service mengembalikannya sebagai 500 (atau 404 jika di-handle)
-		// Mari kita ikuti handler Anda yg mengembalikan 500
 		assert.Equal(t, fiber.StatusInternalServerError, resp.StatusCode)
 	})
 }
@@ -271,7 +256,6 @@ func TestPekerjaan_6_SoftDelete_Endpoint(t *testing.T) {
 		req.Header.Set("Authorization", "Bearer "+testAuthToken)
 		resp, err := testApp.Test(req, -1)
 		assert.NoError(t, err)
-		// Handler Anda mengembalikan 400 Bad Request
 		assert.Equal(t, fiber.StatusBadRequest, resp.StatusCode, "Seharusnya 400 Bad Request saat menghapus data yg sudah di-soft-delete")
 	})
 }
