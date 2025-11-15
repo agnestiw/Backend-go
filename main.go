@@ -8,8 +8,6 @@ import (
 	"log"
 	"os"
 
-	mongoRepo "latihan2/app/repository/mongo"
-
 	_ "github.com/gofiber/fiber/v2"
 
 	_ "latihan2/docs"
@@ -50,8 +48,6 @@ func main() {
 
 	database.InitPostgresDB()
 	database.InitMongoDB()
-
-	mongoRepo.InitPekerjaanCollection(database.MongoDB)
 
 	defer database.DB.Close()
 	defer database.MongoClient.Disconnect(context.Background())

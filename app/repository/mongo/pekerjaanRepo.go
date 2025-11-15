@@ -20,9 +20,16 @@ var (
 	ErrForbidden         = errors.New("forbidden access")
 )
 
-func InitPekerjaanCollection(db *mongo.Database) {
-	pekerjaanColl = db.Collection("pekerjaan")
-}
+// func init() {
+//     // Pastikan database.MongoDB sudah diinisialisasi di tempat lain
+//     // (seperti di TestMain atau main.go) sebelum package ini di-import.
+// 	if database.MongoDB != nil {
+// 		pekerjaanColl = database.MongoDB.Collection("pekerjaan")
+// 	} else {
+//         // Ini akan muncul jika ada masalah urutan import
+// 		log.Println("PERINGATAN: database.MongoDB masih nil saat init() pekerjaanRepo berjalan.")
+// 	}
+// }
 
 func GetPekerjaanRepo(search, sortBy, order string, limit, offset int) ([]model.Pekerjaan, error) {
 	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
@@ -58,6 +65,7 @@ func GetPekerjaanRepo(search, sortBy, order string, limit, offset int) ([]model.
 }
 
 func CountPekerjaanRepo(search string) (int, error) {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
 	if pekerjaanColl == nil {
 		return 0, errors.New("pekerjaanColl belum diinisialisasi")
 	}
@@ -77,19 +85,28 @@ func CountPekerjaanRepo(search string) (int, error) {
 }
 
 func GetPekerjaanByIDRepo(id string) (*model.Pekerjaan, error) {
-	objID, err := primitive.ObjectIDFromHex(id)
-	if err != nil {
-		return nil, err
-	}
-	var p model.Pekerjaan
-	err = pekerjaanColl.FindOne(context.TODO(), bson.M{"_id": objID}).Decode(&p)
-	if err != nil {
-		return nil, ErrPekerjaanNotFound
-	}
-	return &p, nil
+    pekerjaanColl := database.MongoDB.Collection("pekerjaan")
+
+    objID, err := primitive.ObjectIDFromHex(id)
+    if err != nil {
+        return nil, err
+    }
+
+    filter := bson.M{
+        "_id":        objID,
+        "deleted_at": nil,
+    }
+
+    var p model.Pekerjaan
+    err = pekerjaanColl.FindOne(context.TODO(), filter).Decode(&p) 
+    if err != nil {
+        return nil, ErrPekerjaanNotFound 
+    }
+    return &p, nil
 }
 
 func GetPekerjaanByAlumniID(alumniID string) ([]model.Pekerjaan, error) {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
 	objID, err := primitive.ObjectIDFromHex(alumniID)
 	if err != nil {
 		// fmt.Println("DEBUG: alumni_id bukan ObjectID valid:", alumniID)
@@ -111,6 +128,8 @@ func GetPekerjaanByAlumniID(alumniID string) ([]model.Pekerjaan, error) {
 }
 
 func CreatePekerjaan(p *model.Pekerjaan) (*model.Pekerjaan, error) {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
+
 	p.ID = primitive.NewObjectID()
 	p.CreatedAt = time.Now()
 	p.IsDelete = false
@@ -121,6 +140,7 @@ func CreatePekerjaan(p *model.Pekerjaan) (*model.Pekerjaan, error) {
 }
 
 func UpdatePekerjaan(id string, req model.UpdatePekerjaanRequest) (*model.Pekerjaan, error) {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
 	objID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
 		return nil, err
@@ -146,6 +166,7 @@ func UpdatePekerjaan(id string, req model.UpdatePekerjaanRequest) (*model.Pekerj
 }
 
 func SoftDeletePekerjaan(pekerjaanID, userID, role string) error {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
 	objID, err := primitive.ObjectIDFromHex(pekerjaanID)
 	if err != nil {
 		return err
@@ -175,6 +196,7 @@ func SoftDeletePekerjaan(pekerjaanID, userID, role string) error {
 }
 
 func RestorePekerjaan(pekerjaanID, userID, role string) error {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
 	objID, err := primitive.ObjectIDFromHex(pekerjaanID)
 	if err != nil {
 		return err
@@ -204,6 +226,7 @@ func RestorePekerjaan(pekerjaanID, userID, role string) error {
 }
 
 func HardDeletePekerjaan(pekerjaanID, userID, role string) error {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
 	objID, err := primitive.ObjectIDFromHex(pekerjaanID)
 	if err != nil {
 		return err
@@ -225,6 +248,7 @@ func HardDeletePekerjaan(pekerjaanID, userID, role string) error {
 }
 
 func GetTrashPekerjaan(id, role string) ([]model.Pekerjaan, error) {
+	pekerjaanColl := database.MongoDB.Collection("pekerjaan")
 	filter := bson.M{"is_delete": true}
 
 	// Jika ID dikirim lewat params, ambil berdasarkan _id

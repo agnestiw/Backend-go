@@ -53,10 +53,10 @@ func ValidateMongoToken(tokenString string) (*MongoClaims, error) {
 		log.Printf("[DEBUG-JWT-ValidateMongo] Token tidak valid / gagal casting claims")
 		return nil, errors.New("token tidak valid")
 	}
-	log.Printf("[DEBUG-JWT-ValidateMongo] Parsed: UserID='%s', Username='%s', Role='%s'",
-		claims.UserID, claims.Username, claims.Role)
+	// log.Printf("[DEBUG-JWT-ValidateMongo] Parsed: UserID='%s', Username='%s', Role='%s'",
+	// 	claims.UserID, claims.Username, claims.Role)
 	if claims.UserID == "" || claims.Role == "" {
-		log.Printf("[DEBUG-JWT-ValidateMongo] Klaim kosong: UserID='%s', Role='%s'", claims.UserID, claims.Role)
+		// log.Printf("[DEBUG-JWT-ValidateMongo] Klaim kosong: UserID='%s', Role='%s'", claims.UserID, claims.Role)
 		return nil, errors.New("klaim token tidak lengkap")
 	}
 

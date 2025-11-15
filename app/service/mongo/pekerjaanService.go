@@ -235,7 +235,6 @@ func UpdatePekerjaan(c *fiber.Ctx) error {
 // @Router       /api/mg/pekerjaan/soft-delete/{id} [delete]
 // @Security     BearerAuth
 func SoftDeletePekerjaan(c *fiber.Ctx) error {
-	fmt.Println("DEBUG: Masuk ke SoftDeletePekerjaan handler")
 	id := c.Params("id")
 	fmt.Println("DEBUG: ID diterima dari URL =", id)
 
@@ -251,7 +250,7 @@ func SoftDeletePekerjaan(c *fiber.Ctx) error {
 	}
 
 	if err := mongoRepo.SoftDeletePekerjaan(id, userID, role); err != nil {
-		fmt.Println("DEBUG: Error saat SoftDeletePekerjaan:", err)
+		// fmt.Println("DEBUG: Error saat SoftDeletePekerjaan:", err)
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"error": err.Error(),
 		})

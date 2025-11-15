@@ -113,8 +113,8 @@ func AuthRequiredMongo() fiber.Handler {
 		}
 
 		// Debug info
-		log.Printf("[DEBUG-AuthMongo] Claims Diterima: UserID='%s', Username='%s', Role='%s'",
-			claims.UserID, claims.Username, claims.Role)
+		// log.Printf("[DEBUG-AuthMongo] Claims Diterima: UserID='%s', Username='%s', Role='%s'",
+		// 	claims.UserID, claims.Username, claims.Role)
 
 		if claims.UserID == "" || claims.Role == "" {
 			log.Printf("[DEBUG-AuthMongo] Validasi Gagal: UserID atau Role kosong!")

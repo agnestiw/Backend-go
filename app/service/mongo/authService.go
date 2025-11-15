@@ -2,7 +2,6 @@ package mongo
 
 import (
 	"errors"
-	"fmt"
 	"latihan2/app/model" 
 	mongoModel "latihan2/app/model/mongo"
 	mongoRepo "latihan2/app/repository/mongo"
@@ -53,7 +52,7 @@ func LoginMongo(c *fiber.Ctx) error {
 		})
 	}
 
-	fmt.Printf(">>> [DEBUG] Memanggil GenerateMongoToken dengan User: %+v", user)
+	// fmt.Printf(">>> [DEBUG] Memanggil GenerateMongoToken dengan User: %+v", user)
 	token, err := utils.GenerateMongoToken(user.ID, user.Username, user.Role)
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
